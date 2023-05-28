@@ -1,0 +1,4 @@
+"amixer -c Generic set Master 5%+"
+Alt + b:4
+"amixer -c Generic set Master 5%-"
+Alt + b:5

@@ -1,0 +1,12 @@
+feh --bg-scale $HOME/src/etc/wall/blur.jpg
+
+# disable screen blanking
+xset -dpms
+xset s noblank
+xset s off
+
+sct 3500
+
+xbindkeys
+
+exec i3

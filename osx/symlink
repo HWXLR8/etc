@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+
+ln -svf $SCRIPT_DIR/bash_profile "$HOME"/.bash_profile
+ln -svf $SCRIPT_DIR/inputrc "$HOME"/.inputrc

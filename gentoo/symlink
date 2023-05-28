@@ -1,0 +1,18 @@
+#!/bin/bash
+
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+
+echo "removing old dirs"
+sudo rm -rv /etc/portage/package.use
+sudo rm -rv /etc/portage/savedconfig
+rm -rf "$HOME"/.config/i3
+
+echo "creating links"
+ln -svf $SCRIPT_DIR/bashrc "$HOME"/.bashrc
+ln -svf $SCRIPT_DIR/inputrc "$HOME"/.inputrc
+ln -svf $SCRIPT_DIR/xinitrc "$HOME"/.xinitrc
+ln -svf $SCRIPT_DIR/i3 "$HOME"/.config/
+sudo ln -svf $SCRIPT_DIR/i3status.conf /etc/
+
+sudo ln -sv $SCRIPT_DIR/package.use /etc/portage/
+sudo ln -sv $SCRIPT_DIR/savedconfig /etc/portage/

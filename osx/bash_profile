@@ -1,0 +1,19 @@
+#!/bin/bash
+
+alias c='clear'
+alias e='emacs -nw'
+alias l='gls -l --color --sort=extension --group-directories-first'
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gp='git push'
+alias gb='git branch'
+alias gpom='git push origin master'
+alias ..='cd ..'
+alias myip='curl http://ifconfig.me'
+alias yta="youtube-dl -f bestaudio"
+
+export EDITOR="emacs -nw"
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export PS1='\[\e[0;35m\][\W]\[\e[0m\] '

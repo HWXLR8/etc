@@ -1,0 +1,84 @@
+# The top level shared pseudo device, with both PCM and CTL interfaces
+# The device names "default", "dsp0", "mixer0" have conventional meanings.
+
+# The top level shared pseudo device, with both PCM and CTL interfaces
+# The ALSA default is "!default", but many programs like XMMS and aoss
+# assume "dsp0" as default name for PCM and "mixer0" for CTL.
+
+# Amazingly, XMMS has problems if one defines 'pcm.dsp0' to be
+# 'plug' for 'pcm.asym0' and not directly as 'asym0'.
+
+pcm.!default            { type                  plug;
+                          slave.pcm             "dmix0"; }
+ctl.!default            { type hw; card Generic; }
+
+pcm.dsp0                { type                  plug;
+                          slave.pcm             "dmix0"; } 
+ctl.dsp0                { type hw; card Generic; }
+ctl.mixer0              { type hw; card Generic; }
+
+########################################################################
+
+# Buffering (period time defaults to 125000 usecs).
+
+# Size of period, expressed either in usec or byte units:
+#   period_time USECS
+#   period_size BYTES
+
+# Size of buffers, expressed either in period, usec, or byte units:
+#   periods     PERIODS
+#   buffer_time USECS
+#   buffer_size BYTES
+
+# The ALSA docs have examples with 'period_time' set to 0,
+# when 'period_size' and 'buffer_size' are used instead,
+# but this can cause trouble in later releases of ALSA.
+
+# For OSS compatibility, 'period_size' and 'buffer_size'
+# should be powers of 2. Also, many cards cannot accept
+# a 'period_size' much greater than 4096, so 4096 is safe.
+# On my VIA 8233A, any value for 'period_time' greater than
+# 85333 usecs (precisely!) causes hiccups in sound output.
+# Why? At 48kHz, 85333 usec are are just over 4096 bytes/channel.
+
+pcm.dmix0               { type                  dmix;
+                          ipc_key               13759;
+
+                          slave.pcm             "hw:Generic,0";
+                          slave.channels        2;
+
+                          slave.rate            48000;
+                          slave.period_size     512;
+                          slave.buffer_size     16384;
+
+                          slave.period_time     0;
+                          slave.buffer_time     0;
+
+                          # Map only the first two channels
+                          bindings.0            0;
+                          bindings.1            1; }
+
+# EQ
+ctl.equal {
+    type equal;
+}
+
+pcm.plugequal {
+    type equal;
+    # Modify the line below if you do not
+    # want to use sound card 0.
+    slave.pcm "plughw:1,0";
+    # by default we want to play from more sources at time:
+    slave.pcm "plug:dmix0";
+}
+
+#pcm.equal {
+# If you do not want the equalizer to be your
+# default soundcard comment the following
+# line and uncomment the above line. (You can
+# choose it as the output device by addressing
+# it with specific apps,eg mpg123 -a equal 06.Back_In_Black.mp3)
+pcm.!default {
+    type plug;
+    slave.pcm plugequal;
+}

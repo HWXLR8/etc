@@ -1,0 +1,18 @@
+urxvt*background:               black
+urxvt*foreground:               white
+urxvt*scrollBar:		false
+urxvt.font:xft:terminus:size=20
+URxvt.perl-ext-common: "default, -searchable-scrollback"
+URxvt*internalBorder: 20
+
+!blue
+*color12:  #ff99ce
+
+
+!green
+*color2:  #438d80
+*color10: #438d80
+
+!cyan
+*color6:  #ff9999
+*color14: #ff9999

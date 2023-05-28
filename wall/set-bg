@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+BG="feh --bg-scale $SCRIPT_DIR/"
+
+if [ -z ${1+x} ];
+then
+    echo "no wallpaper selected"
+else
+    # pipe delimiter since the substituation contains '/'
+    sed --in-place --follow-symlinks "1s|.*|$BG$1|" ~/.xinitrc
+    eval $BG/$1
+fi

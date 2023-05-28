@@ -1,0 +1,149 @@
+# required by x11-libs/pango-1.48.10::gentoo
+# required by x11-libs/gtk+-2.24.33::gentoo
+# required by x11-themes/gtk-engines-adwaita-3.28::gentoo
+>=media-libs/freetype-2.11.0-r1 harfbuzz
+# required by media-libs/mesa-21.2.1::gentoo
+# required by media-video/mpv-0.33.1-r1::gentoo[egl]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libglvnd-1.3.4 abi_x86_32 X
+# required by dev-lang/ruby-3.0.2::gentoo
+# required by dev-ruby/rbs-1.5.1::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/typeprof-0.15.2::gentoo[ruby_targets_ruby30]
+>=dev-ruby/power_assert-2.0.1 ruby_targets_ruby30 ruby_targets_ruby27
+# required by dev-ruby/typeprof-0.15.2::gentoo[ruby_targets_ruby30]
+# required by dev-lang/ruby-3.0.2::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/racc-1.5.2-r1::gentoo
+# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/bundler-2.2.25::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.2.14::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/json-2.5.1-r1::gentoo[-test,ruby_targets_ruby30]
+>=dev-ruby/rbs-1.5.1 ruby_targets_ruby30
+# required by dev-lang/ruby-3.0.2::gentoo
+# required by dev-ruby/rbs-1.5.1::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/typeprof-0.15.2::gentoo[ruby_targets_ruby30]
+>=dev-ruby/test-unit-3.4.6 ruby_targets_ruby30 ruby_targets_ruby27
+# required by dev-lang/ruby-3.0.2::gentoo
+# required by dev-ruby/rbs-1.5.1::gentoo[ruby_targets_ruby30]
+>=dev-ruby/typeprof-0.15.2 ruby_targets_ruby30
+# required by dev-lang/ruby-3.0.2::gentoo
+# required by dev-ruby/rbs-1.5.1::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/typeprof-0.15.2::gentoo[ruby_targets_ruby30]
+>=dev-ruby/bundler-2.2.25 ruby_targets_ruby30 ruby_targets_ruby27
+# required by dev-lang/ruby-3.0.2::gentoo[rdoc]
+# required by dev-ruby/rbs-1.5.1::gentoo[ruby_targets_ruby30]
+# required by dev-ruby/typeprof-0.15.2::gentoo[ruby_targets_ruby30]
+>=dev-ruby/rdoc-6.3.2 ruby_targets_ruby30 ruby_targets_ruby27
+# required by media-libs/libglvnd-1.5.0::gentoo[X]
+# required by x11-base/xorg-server-21.1.4::gentoo
+# required by xorg-server (argument)
+>=x11-libs/libX11-1.8.1 abi_x86_32
+# required by media-libs/libglvnd-1.5.0::gentoo[X]
+# required by x11-base/xorg-server-21.1.4::gentoo
+# required by xorg-server (argument)
+>=x11-libs/libXext-1.3.4 abi_x86_32
+# required by x11-libs/pango-1.50.9::gentoo
+# required by x11-wm/i3-gaps-4.20.1::gentoo
+# required by i3-gaps (argument)
+>=x11-libs/cairo-1.16.0-r5 X
+# required by x11-wm/i3-gaps-4.20.1::gentoo
+# required by i3-gaps (argument)
+>=x11-libs/libxkbcommon-1.4.1 X
+# required by x11-wm/i3-gaps-4.20.1::gentoo
+# required by i3-gaps (argument)
+>=x11-libs/pango-1.50.9 X
+# required by x11-base/xorg-server-21.1.4::gentoo[elogind]
+# required by xorg-server (argument)
+>=sys-auth/pambase-20220214 elogind
+
+# required by x11-libs/libX11-1.8.1::gentoo
+# required by x11-libs/libXmu-1.1.3::gentoo
+# required by x11-apps/xset-1.2.4-r1::gentoo
+# required by xset (argument)
+>=x11-libs/libxcb-1.15-r1 abi_x86_32
+# required by x11-libs/libxcb-1.15-r1::gentoo
+# required by x11-libs/cairo-1.16.0-r5::gentoo[X]
+# required by x11-libs/pango-1.50.9::gentoo
+# required by x11-wm/i3-gaps-4.20.1::gentoo
+# required by i3-gaps (argument)
+>=x11-libs/libXau-1.0.10 abi_x86_32
+# required by x11-libs/libxcb-1.15-r1::gentoo
+# required by x11-libs/cairo-1.16.0-r5::gentoo[X]
+# required by x11-libs/pango-1.50.9::gentoo
+# required by x11-wm/i3-gaps-4.20.1::gentoo
+# required by i3-gaps (argument)
+>=x11-libs/libXdmcp-1.1.3-r1 abi_x86_32
+# required by x11-libs/libXdmcp-1.1.3-r1::gentoo
+# required by x11-base/xorg-server-21.1.4::gentoo
+# required by xorg-server (argument)
+>=dev-libs/libbsd-0.11.6 abi_x86_32
+# required by dev-libs/libbsd-0.11.6::gentoo
+# required by x11-base/xorg-server-21.1.4::gentoo
+# required by xorg-server (argument)
+>=app-crypt/libmd-1.0.4 abi_x86_32
+
+# required by x11-libs/gtk+-3.24.34::gentoo
+# required by x11-themes/adwaita-icon-theme-42.0_p2::gentoo
+>=x11-libs/pango-1.50.9 introspection
+# required by x11-libs/pango-1.50.9::gentoo
+# required by x11-drivers/nvidia-drivers-515.65.01::gentoo[tools]
+# required by @selected
+# required by @world (argument)
+>=media-libs/harfbuzz-5.1.0 introspection
+
+# required by games-emulation/dolphin-5.0_p20220520-r1::gentoo
+# required by games-emulation/dolphin (argument)
+>=sys-libs/zlib-1.2.12-r3 minizip
+
+# required by games-emulation/m64py-0.2.5_p20211222::gentoo
+# required by games-emulation/mupen64plus-2.5.9::gentoo[ui-m64py]
+# required by mupen64plus (argument)
+>=dev-python/PyQt5-5.15.6 gui widgets opengl
+# required by media-gfx/gimp-2.10.32::gentoo
+# required by gimp (argument)
+>=media-libs/gegl-0.4.38 cairo
+
+# required by www-client/firefox-109.0.1::gentoo[system-libvpx]
+# required by firefox (argument)
+>=media-libs/libvpx-1.12.0-r1 postproc
+
+
+# required by sci-electronics/kicad-6.0.9::gentoo
+# required by kicad (argument)
+>=dev-libs/boost-1.81.0-r1 context nls python
+# required by dev-python/wxpython-4.0.7-r4::gentoo
+# required by sci-electronics/kicad-6.0.9::gentoo[python_single_target_python3_10]
+# required by kicad (argument)
+>=x11-libs/wxGTK-3.0.5.1-r1:3.0-gtk3 opengl gstreamer tiff sdl libnotify
+# required by dev-python/scipy-1.10.0::gentoo[-test]
+# required by dev-python/uranium-4.13.0-r1::gentoo[-test,python_single_target_python3_10]
+# required by media-gfx/cura-4.13.1-r1::gentoo
+# required by cura (argument)
+>=dev-python/numpy-1.24.2 lapack
+# required by dev-python/uranium-4.13.0-r1::gentoo[-test,python_single_target_python3_10]
+# required by media-gfx/cura-4.13.1-r1::gentoo
+# required by cura (argument)
+>=dev-python/PyQt5-5.15.7 network svg declarative
+# required by media-gfx/blender-3.4.1::gentoo
+# required by blender (argument)
+>=media-libs/freetype-2.12.1-r2 brotli
+# required by media-gfx/blender-3.4.1::gentoo[ffmpeg]
+# required by blender (argument)
+>=media-video/ffmpeg-4.4.3 xvid theora
+
+# required by sci-electronics/kicad-7.0.0-r1::gentoo
+# required by sci-electronics/kicad-footprints-7.0.0::gentoo
+# required by @selected
+# required by @world (argument)
+>=x11-libs/wxGTK-3.2.2.1 opengl sdl gstreamer tiff libnotify
+# required by x11-libs/wxGTK-3.2.2.1::gentoo
+# required by dev-python/wxpython-4.2.0::gentoo
+# required by sci-electronics/kicad-7.0.0-r1::gentoo[python_single_target_python3_10]
+# required by sci-electronics/kicad-footprints-7.0.0::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-libs/libpcre2-10.42-r1 pcre32
+

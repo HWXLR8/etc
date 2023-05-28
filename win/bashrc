@@ -1,0 +1,11 @@
+#!/bin/bash
+
+alias c='clear'
+alias e='emacs -nw'
+alias l='ls --color=auto --group-directories-first -lh'
+alias ga='git add'
+alias gp='git push'
+alias ..='cd ..'
+
+export EDITOR="emacs -nw"
+export PS1='\[\e[0;35m\][\W]\[\e[0m\] '

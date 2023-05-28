@@ -1,0 +1,2 @@
+cross-avr/gcc -openmp
+cross-avr/binutils multitarget

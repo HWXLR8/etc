@@ -1,0 +1,164 @@
+#!/bin/bash
+
+# bash
+alias c='clear'
+alias ..='cd ..'
+alias l='ls --color=auto --sort=extension --group-directories-first -lh'
+alias t='ls --color=auto --sort=extension --group-directories-first -lh'
+
+# program shortcuts
+alias e='emacs -nw'
+alias em='emacs -nw --eval="(mu4e)"'
+alias lb='lsblk'
+alias v='alsamixer'
+alias s='slock'
+alias u='units -v'
+alias n='ncmpcpp'
+alias f='feh -F'
+alias m='mpv'
+alias g='grep -r -i'
+alias p='python'
+
+# git
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gb='git branch'
+alias gd='git diff'
+alias gp='git push'
+alias gpom='git push origin master'
+
+# youtube
+alias yta='yt-dlp -f bestaudio'
+alias ytls='yt-dlp -F'
+alias ytd='yt-dlp -f'
+
+# docker
+alias drm_all='docker rm -vf $(docker ps -a -q) && docker rmi -f $(docker images -a -q)'
+alias dc='docker container'
+alias di='docker image'
+alias dv='docker volume'
+
+# sound
+alias soundtest='speaker-test -t wav -c 2'
+alias lssnd='cat /sys/class/sound/card*/id'
+
+# system utility
+alias cpufreq='watch -n 0.25 "cat /proc/cpuinfo | grep MHz"'
+
+# gentoo specific
+alias upgrade='sudo emerge --sync; eix-update; sudo emerge -a -uDN world'
+
+# environment variables
+export EDITOR='emacs -nw'
+export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin:~/.local/bin:~/src/bin"
+export PS1='\[\e[0;35m\][\W]\[\e[0m\] '
+export LADSPA_PATH=/usr/lib64/ladspa/
+export PYTHONPATH=/usr/lib/python3.10/site-packages/
+
+# a rudimentary disk benchmark
+function benchamrk-disk {
+    echo "SEQUENTIAL WRITE"
+    dd if=/dev/zero of=._bench bs=1M count=2048 conv=fdatasync,notrunc
+    echo 3 | sudo tee -a /proc/sys/vm/drop_caches > /dev/null
+    echo
+    echo "SEQUENTIAL READ"
+    dd if=._bench of=/dev/null bs=1M count=2048
+    rm ._bench
+}
+
+# echo a random file from the current directory
+function rfile {
+    local RANDOM_FILE="$(ls . | shuf -n 1)"
+    echo "$RANDOM_FILE"
+}
+
+# update all repos in a directory of git repos
+function update-repos {
+    for d in */ ; do
+        cd "$d"
+        git pull origin master
+        cd ..
+    done
+}
+
+# wipe the entire git history of a repo without removing .git
+function git-wipe {
+    set -x
+    git checkout --orphan temp
+    git add -A
+    git commit -am "init"
+    git branch -D master
+    git branch -m master
+    set +x
+}
+
+
+# downlaod the (generally) best quailty version of a youtube videa,
+# this is not perfect
+function yt {
+    yt-dlp \
+        -f "(bestvideo[vcodec^=av01][height>=1080][fps>30]/bestvideo[vcodec=vp9.2][height>=1080] \
+        [fps>30]/bestvideo[vcodec=vp9][height>=1080][fps>30]/bestvideo[vcodec^=av01] \
+        [height>=1080]/bestvideo[vcodec=vp9.2][height>=1080]/bestvideo[vcodec=vp9] \
+        [height>=1080]/bestvideo[height>=1080]/bestvideo[vcodec^=av01][height>=720] \
+        [fps>30]/bestvideo[vcodec=vp9.2][height>=720][fps>30]/bestvideo[vcodec=vp9][height>=720] \
+        [fps>30]/bestvideo[vcodec^=av01][height>=720]/bestvideo[vcodec=vp9.2][height>=720]/ \
+        bestvideo[vcodec=vp9][height>=720]/bestvideo[height>=720]/bestvideo)+ \
+        (bestaudio[acodec=opus]/bestaudio)/best" $1
+}
+
+# search youtube
+function yts {
+    yt-dlp ytsearch10:"$1" --get-title --get-id
+}
+
+# play youtube videos using mpv
+function ytmpv {
+    mpv https://www.youtube.com/watch?v=$1
+}
+
+# play youtube audio stream using mpv
+function ytmpva {
+    mpv --no-video https://www.youtube.com/watch?v=$1
+}
+
+# download all of a certian file type from a webpage (useful for archive.org)
+# $1 is file type (for example zip)
+# $2 is url
+function dl {
+    wget -nd -r -np -l 1 -A $1 $2
+}
+
+function discord-vid {
+bitrate="$(awk "BEGIN {print int($2 * 1024 * 1024 * 8 / $(ffprobe \
+    -v error \
+    -show_entries format=duration \
+    -of default=noprint_wrappers=1:nokey=1 \
+    "$1" \
+) / 1000)}")k"
+ffmpeg \
+    -y \
+    -i "$1" \
+    -c:v libx264 \
+    -preset medium \
+    -b:v $bitrate \
+    -pass 1 \
+    -f mp4 \
+    /dev/null \
+    && \
+    ffmpeg \
+	-i "$1" \
+	-c:v libx264 \
+	-preset medium \
+	-b:v $bitrate \
+	-pass 2 \
+	"${1%.*}-$2mB.mp4"
+}
+
+# takes single class_name argument
+function add-class {
+    className=$(sed -r 's/(^|_)([a-z])/\U\2/g' <<<  "$1")
+    echo -e "#pragma once\n\nclass $className {\npublic:\n  $className();\n};" > include/"$1".hpp
+    echo "#include <$1.hpp>" > src/"$1".cpp
+}

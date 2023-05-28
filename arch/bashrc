@@ -1,0 +1,23 @@
+#!/bin/bash
+
+alias c='clear'
+alias e='emacs -nw'
+alias l='ls --color=auto --group-directories-first -lh'
+alias v='alsamixer'
+alias s='slock'
+alias f='feh -F'
+alias u='units -v'
+alias m='ncmpcpp'
+alias z='zathura'
+alias gs='git status'
+alias gc='git commit'
+alias ga='git add'
+alias gp='git push'
+alias ..='cd ..'
+alias upgrade='sudo pacman -Syu'
+alias myip='curl http://ifconfig.me'
+alias yta="youtube-dl -f bestaudio"
+
+export EDITOR="emacs -nw"
+export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin"
+export PS1='\[\e[0;35m\][\W]\[\e[0m\] '

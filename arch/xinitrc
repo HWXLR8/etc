@@ -1,0 +1,4 @@
+# placeholder line for wallpaper
+
+xrdb .Xresources
+exec i3

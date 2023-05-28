@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+
+echo "creating directory if it doesn't exist"
+mkdir -pv $HOME/.config/
+
+ln -svf $SCRIPT_DIR/user-dirs.dirs $HOME/.config/user-dirs.dirs
