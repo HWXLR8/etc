@@ -1,3 +1,5 @@
+export GTK_THEME=Adwaita:dark
+
 feh --bg-scale $HOME/src/etc/wall/blur.jpg
 
 # disable screen blanking
