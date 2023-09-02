@@ -30,7 +30,7 @@ font pango:xos4 Terminus
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st -e screen
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill

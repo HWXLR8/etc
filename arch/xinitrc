@@ -1,4 +1,11 @@
 # placeholder line for wallpaper
 
+export GTK_THEME=Adwaita:dark
+
+# disable screen blanking
+xset -dpms
+xset s noblank
+xset s off
+
 xrdb .Xresources
 exec i3

@@ -3,20 +3,22 @@
 alias c='clear'
 alias e='emacs -nw'
 alias l='ls --color=auto --group-directories-first -lh'
+alias t='ls --color=auto --group-directories-first -lh'
+alias ..='cd ..'
 alias v='alsamixer'
 alias s='slock'
 alias f='feh -F'
-alias u='units -v'
-alias m='ncmpcpp'
-alias z='zathura'
+alias randm='ls | shuf | xargs mpv -fs'
+alias randf='ls | shuf | xargs feh -F'
+
 alias gs='git status'
 alias gc='git commit'
 alias ga='git add'
 alias gp='git push'
-alias ..='cd ..'
+alias gpom='git push origin master'
+
 alias upgrade='sudo pacman -Syu'
 alias myip='curl http://ifconfig.me'
-alias yta="youtube-dl -f bestaudio"
 
 export EDITOR="emacs -nw"
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin"
