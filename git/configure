@@ -9,4 +9,3 @@ git config --global user.name "$NAME"
 git config --global user.email "$EMAIL"
 git config --global push.default simple
 git config --global credential.helper 'cache --timeout=3600'
-git config --global core.sshCommand "ssh -i $HOME/.ssh/git.priv"
