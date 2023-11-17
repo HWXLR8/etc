@@ -76,9 +76,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -178,3 +178,7 @@ gaps inner 25
 gaps outer 45
 
 smart_gaps on
+
+# custom shortcuts
+
+bindsym --release $mod+s exec "scrot -s /tmp/%b%d_%H-%M-%S.png -e 'xclip -selection clipboard -t image/png -i $f'"
