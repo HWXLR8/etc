@@ -5,14 +5,12 @@ emerge -a \
        htop \
        app-text/tree \
        app-misc/screen \
-       sudo \
        eix \
        gentoolkit \
-       dev-vcs/git \
        sysklogd \
        xorg-server \
        xset \
-       i3-gaps \
+       i3 \
        i3status \
        st \
        terminus-font \
@@ -22,5 +20,8 @@ emerge -a \
        sct \
        feh \
        mpv \
-       arphicfonts \
        nanumfont \
+       xrandr \
+       xclip \
+       neofetch \
+       firefox
