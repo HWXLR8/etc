@@ -3,7 +3,6 @@
 # bash
 alias c='clear'
 alias ..='cd ..'
-alias l='ls --color=auto --sort=extension --group-directories-first -lh'
 alias t='ls --color=auto --sort=extension --group-directories-first -lh'
 
 # program shortcuts
@@ -11,7 +10,7 @@ alias e='emacs -nw'
 alias em='emacs -nw --eval="(mu4e)"'
 alias lb='lsblk'
 alias v='alsamixer'
-alias s='slock'
+alias l='slock'
 alias u='units -v'
 alias n='ncmpcpp'
 alias f='feh -F'
@@ -161,4 +160,13 @@ function add-class {
     className=$(sed -r 's/(^|_)([a-z])/\U\2/g' <<<  "$1")
     echo -e "#pragma once\n\nclass $className {\npublic:\n  $className();\n};" > include/"$1".hpp
     echo "#include <$1.hpp>" > src/"$1".cpp
+}
+
+function build-kernel {
+    mountpoint /boot || return
+    cd /usr/src/linux
+    sudo make -j9
+    sudo make modules_install
+    sudo make install
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
