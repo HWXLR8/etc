@@ -1,3 +1,5 @@
+#!/bin/bash
+
 emerge -a \
        alsa-utils \
        emacs \
