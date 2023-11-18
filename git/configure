@@ -4,7 +4,7 @@ echo "Configuring git.."
 read -p "Enter name: " NAME
 read -p "Enter email address: " EMAIL
 echo "Credentials cached for 1 hour"
-echo "ssh key path: $HOME/.ssh/git.priv"
+echo "ssh key path: $HOME/.ssh/github.priv"
 git config --global user.name "$NAME"
 git config --global user.email "$EMAIL"
 git config --global push.default simple
