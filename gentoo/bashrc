@@ -20,10 +20,14 @@ alias p='python'
 
 # git
 alias gs='git status'
-alias gc='git commit'
 alias ga='git add'
-alias gb='git branch'
 alias gd='git diff'
+alias gss='git status .'
+alias gaa='git add .'
+alias gdd='git diff .'
+alias gc='git commit'
+alias gb='git branch'
+
 alias gp='git push'
 alias gpom='git push origin master'
 
