@@ -2,6 +2,7 @@
 
 emerge -a \
        mpv \
+       transmission \
        kicad \
        kicad-footprints \
        kicad-packages3d \

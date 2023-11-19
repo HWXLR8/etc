@@ -26,4 +26,5 @@ emerge -a \
        xrandr \
        xclip \
        neofetch \
+       xbindkeys \
        firefox
