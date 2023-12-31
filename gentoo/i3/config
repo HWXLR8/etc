@@ -181,4 +181,4 @@ smart_gaps on
 
 # custom shortcuts
 
-bindsym --release $mod+s exec "scrot -s /tmp/%b%d_%H-%M-%S.png -e 'xclip -selection clipboard -t image/png -i $f'"
+bindsym --release $mod+s exec "escrotum -s /tmp/%b%d_%H-%M-%S.png -e 'xclip -selection clipboard -t image/png -i $f'"
