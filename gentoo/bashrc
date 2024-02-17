@@ -26,7 +26,12 @@ alias gss='git status .'
 alias gaa='git add .'
 alias gdd='git diff .'
 alias gc='git commit'
+alias gca='git commit --amend'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gf='git fetch'
 alias gb='git branch'
+alias gl='git log'
 
 alias gp='git push'
 alias gpom='git push origin master'
@@ -51,13 +56,16 @@ alias cpufreq='watch -n 0.25 "cat /proc/cpuinfo | grep MHz"'
 
 # gentoo specific
 alias upgrade='sudo emerge --sync; eix-update; sudo emerge -a -uDN world'
+alias elog='tail -f /var/log/emerge.log'
+
+source ~/src/etc/git/git-prompt.sh
 
 # environment variables
 export EDITOR='emacs -nw'
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin:~/.local/bin:~/src/bin"
-export PS1='\[\e[0;35m\][\W]\[\e[0m\] '
+export PS1='\[\e[0;35m\][\W]\[\e[0m\]$(__git_ps1) '
 export LADSPA_PATH=/usr/lib64/ladspa/
-export PYTHONPATH=/usr/lib/python3.10/site-packages/
+export PYTHONPATH=/usr/lib/python3.11/site-packages/
 
 # a rudimentary disk benchmark
 function benchamrk-disk {
@@ -174,3 +182,7 @@ function build-kernel {
     sudo make install
     sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
+
+# synchronize X/GTK clipboards
+autocutsel &
+autocutsel -s PRIMARY &
