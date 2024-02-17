@@ -1,5 +1,6 @@
 export GTK_THEME=Adwaita:dark
 
+xrandr --output DP-1 --mode 1920x1080 --rate 239.76 --rotate left
 feh --bg-scale $HOME/src/etc/wall/blur.jpg
 
 # disable screen blanking
@@ -7,7 +8,7 @@ xset -dpms
 xset s noblank
 xset s off
 
-sct 3500
+sct 3000
 
 xbindkeys
 
