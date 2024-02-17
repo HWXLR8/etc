@@ -32,9 +32,10 @@ alias gco='git checkout'
 alias gf='git fetch'
 alias gb='git branch'
 alias gl='git log'
-
 alias gp='git push'
 alias gpom='git push origin master'
+
+source ~/src/etc/git/git-prompt.sh
 
 # youtube
 alias yta='yt-dlp -f bestaudio'
@@ -57,8 +58,6 @@ alias cpufreq='watch -n 0.25 "cat /proc/cpuinfo | grep MHz"'
 # gentoo specific
 alias upgrade='sudo emerge --sync; eix-update; sudo emerge -a -uDN world'
 alias elog='tail -f /var/log/emerge.log'
-
-source ~/src/etc/git/git-prompt.sh
 
 # environment variables
 export EDITOR='emacs -nw'
