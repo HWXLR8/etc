@@ -1,2 +1,0 @@
-# remove dep libtommath for youtube-dl
-dev-libs/libtomcrypt -libtommath

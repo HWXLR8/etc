@@ -1,0 +1,104 @@
+app-admin/sudo -sendmail
+app-admin/testdisk jpeg ntfs
+app-crypt/pinentry -gtk
+app-editors/emacs ssl -inotify -xpm
+app-emulation/qemu sdl gtk
+app-forensics/chkrootkit -cron
+app-i18n/fcitx gtk gtk3 qt4
+app-text/poppler boost cairo png tiff
+app-text/texlive dvi2tty epspdf extra graphics linguas_en publishers science xetex cjk png X
+cross-avr/binutils multitarget
+cross-avr/gcc -openmp
+cross-avr/gcc -sanitize
+dev-cpp/cairomm X
+dev-cpp/gtkmm X
+dev-lang/R bash-completion
+dev-lang/php mysql mysqli sqlite cgi pdo
+dev-lang/python -tk
+dev-libs/libgcrypt static-libs
+dev-libs/libtomcrypt -libtommath
+dev-perl/Net-HTTP minimal
+dev-perl/libwww-perl -ssl
+dev-python/PyQt5 -printsupport
+dev-python/matplotlib tk
+dev-python/pillow jpeg webp
+dev-qt/qtgui jpeg
+dev-qt/qtwebengine widgets alsa
+dev-util/cmake internal-jsoncpp
+dev-util/nvidia-cuda-sdk -doc -examples opencl
+dev-util/vulkan-tools cube
+dev-vcs/git -python -pcre -pcre-jit -perl
+games-emulation/dolphin alsa opengl openal ffmpeg lto bluetooth vulkan
+games-emulation/mednafen alsa
+games-fps/doomsday tools
+games-util/deutex png
+kde-frameworks/kauth -policykit
+kde-frameworks/kio -handbook -kwallet -acl
+mail-client/mutt gnutls gpg imap pop smtp sasl -berkdb
+mail-client/thunderbird l10n_zh-CN l10n_zh-TW
+media-fonts/arphicfonts X
+media-fonts/terminus-font distinct-l X
+media-gfx/darktable cpu_flags_x86_sse3
+media-gfx/feh
+media-gfx/gimp png svg
+media-gfx/imagemagick jpeg png
+media-gfx/inkscape
+media-gfx/openscad emacs
+media-gfx/sane-backends -ipv6 threads usb
+media-gfx/xsane jpeg lcms ocr png tiff
+media-libs/harfbuzz -cairo -introspection -icu
+media-libs/imlib2 gif jpeg mp3 png tiff
+media-libs/libbluray utils
+media-libs/libcaca imlib
+media-libs/libglvnd X
+media-libs/libsdl X alsa
+media-libs/libsdl2 X alsa udev opengl vulkan
+media-libs/mesa vulkan -llvm wayland
+media-libs/openal alsa
+media-libs/phonon -vlc qt5
+media-libs/portaudio alsa
+media-libs/sdl-image png gif jpeg tiff
+media-libs/vulkan-loader X
+media-libs/vulkan-loader layers
+media-libs/x265 numa
+media-sound/abcde aac cdparanoia cdr flac vorbis
+media-sound/alsa-utils -libsamplerate
+media-sound/milkytracker alsa
+media-sound/mpd lame ogg flac vorbis
+media-sound/ncmpcpp clock taglib visualizer
+media-sound/timidity++ alsa
+media-video/ffmpeg X mp3 openssl bluray alsa libdrm opengl opus vorbis vulkan x264 x265 vpx sdl nvenc
+media-video/mkvtoolnix qt5
+media-video/mplayer mp3 mng png xinerama opengl vorbis vcd
+media-video/mpv
+media-video/obs-studio nvenc v4l
+media-video/vlc v4l httpd lua xml
+net-dns/bind dlz urandom
+net-dns/unbound dnscrypt threads
+net-fs/nfs-utils nfsv41
+net-libs/libtorrent-rasterbar python
+net-libs/rb_libtorrent python
+net-mail/mu emacs
+net-mail/notmuch mutt emacs python
+net-p2p/transmission gtk
+net-print/cups usb
+net-wireless/bluez test-programs python_single_target_python3_4
+sci-electronics/kicad
+sys-auth/elogind -policykit
+sys-auth/polkit elogind
+sys-block/gparted fat ntfs
+sys-devel/llvm LLVM_TARGETS: x86
+sys-fs/cryptsetup urandom
+sys-kernel/genkernel -firmware
+www-client/firefox hwaccel
+www-client/qutebrowser python_targets_python3_4 gstreamer
+www-servers/lighttpd php
+x11-drivers/nvidia-drivers
+x11-libs/agg sdl
+x11-libs/gtk+ X
+x11-libs/pango -introspection
+x11-misc/dunst dunstify
+x11-misc/picom opengl
+x11-misc/slock savedconfig
+x11-terms/rxvt-unicode 256-color blink fading-colors pixbuf secondary-wheel unicode3 wcwidth xft -vanilla
+x11-terms/st savedconfig
