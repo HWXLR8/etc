@@ -27,4 +27,7 @@ emerge -a \
        xclip \
        neofetch \
        xbindkeys \
-       firefox
+       firefox \
+       usbutils \
+       cpuid2cpuflags \
+       autocutsel
