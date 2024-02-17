@@ -174,8 +174,8 @@ client.unfocused #101010 #191919 #999999
 
 new_window pixel 0px
 
-gaps inner 25
-gaps outer 45
+gaps inner 20
+gaps outer 0
 
 smart_gaps on
 
