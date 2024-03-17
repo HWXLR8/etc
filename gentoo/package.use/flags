@@ -102,3 +102,4 @@ x11-misc/picom opengl
 x11-misc/slock savedconfig
 x11-terms/rxvt-unicode 256-color blink fading-colors pixbuf secondary-wheel unicode3 wcwidth xft -vanilla
 x11-terms/st savedconfig
+games-emulation/vbam wxwidgets
