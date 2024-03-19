@@ -60,6 +60,7 @@ alias upgrade='sudo emerge --sync; eix-update; sudo emerge -a -uDN world'
 alias elog='tail -f /var/log/emerge.log'
 alias use="$EDITOR /etc/portage/package.use/flags"
 alias zzmisc="$EDITOR /etc/portage/package.use/zzmisc"
+alias eu="equery u"
 
 # environment variables
 export EDITOR='emacs -nw'
