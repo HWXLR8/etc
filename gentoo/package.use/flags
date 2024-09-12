@@ -41,7 +41,7 @@ media-fonts/terminus-font distinct-l X
 media-gfx/darktable cpu_flags_x86_sse3
 media-gfx/feh
 media-gfx/gimp png svg
-media-gfx/imagemagick jpeg png
+media-gfx/imagemagick jpeg png webp
 media-gfx/inkscape
 media-gfx/openscad emacs
 media-gfx/sane-backends -ipv6 threads usb
@@ -53,7 +53,7 @@ media-libs/libcaca imlib
 media-libs/libglvnd X
 media-libs/libsdl X alsa
 media-libs/libsdl2 X alsa udev opengl vulkan
-media-libs/mesa vulkan -llvm wayland
+media-libs/mesa vulkan llvm wayland
 media-libs/openal alsa
 media-libs/phonon -vlc qt5
 media-libs/portaudio alsa
@@ -90,7 +90,7 @@ sys-block/gparted fat ntfs
 sys-devel/llvm LLVM_TARGETS: x86
 sys-fs/cryptsetup urandom
 sys-kernel/genkernel -firmware
-www-client/firefox hwaccel
+www-client/firefox hwaccel wayland
 www-client/qutebrowser python_targets_python3_4 gstreamer
 www-servers/lighttpd php
 x11-drivers/nvidia-drivers
@@ -103,3 +103,4 @@ x11-misc/slock savedconfig
 x11-terms/rxvt-unicode 256-color blink fading-colors pixbuf secondary-wheel unicode3 wcwidth xft -vanilla
 x11-terms/st savedconfig
 games-emulation/vbam wxwidgets
+games-fps/gzdoom gtk vulkan
