@@ -24,10 +24,12 @@ emerge -a \
        mpv \
        nanumfont \
        xrandr \
-       xclip \
+       x11-misc/xclip \
        neofetch \
        xbindkeys \
        firefox \
        usbutils \
        cpuid2cpuflags \
+       nfs-utils \
+       yt-dlp \
        autocutsel

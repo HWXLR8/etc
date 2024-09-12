@@ -1,7 +1,6 @@
 #!/bin/bash
 
 emerge -a \
-       mpv \
        transmission \
        kicad \
        kicad-footprints \
