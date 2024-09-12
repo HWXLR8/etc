@@ -62,6 +62,9 @@ alias use="$EDITOR /etc/portage/package.use/flags"
 alias zzmisc="$EDITOR /etc/portage/package.use/zzmisc"
 alias eu="equery u"
 
+# misc
+alias j="emacs -nw $(date +'%b-%d-%Y')"
+
 # environment variables
 export EDITOR='emacs -nw'
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin:~/.local/bin:~/src/bin"
