@@ -24,3 +24,8 @@ alias myip='curl http://ifconfig.me'
 export EDITOR="emacs -nw"
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin"
 export PS1='\[\e[0;35m\][\W]\[\e[0m\] '
+
+function hwxlr8 {
+    git clone git@github.com:hwxlr8/$1 || \
+    git clone https://github.com/hwxlr8/$1
+}
