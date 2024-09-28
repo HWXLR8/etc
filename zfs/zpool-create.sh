@@ -5,12 +5,13 @@ sudo zpool create \
      -O encryption=on \
      -O keylocation=prompt \
      -O keyformat=passphrase \
+     -O compression=lz4 \
+     -O atime=off \
+     -O recordsize=1M \
      [POOL NAME] \
-     [MIRROR/RAIDZ1...] \
-     [DEVICES]
-
-# example ID:
-# /dev/disk/by-id/ata-WDC_WD80EDAZ-11TA3A0_VGGW6UKG \    
-# /dev/disk/by-id/ata-WDC_WD80EDAZ-11TA3A0_VGGX6ZPG
-
-
+     mirror \
+     nvme-[MODEL]_[SERIAL] \
+     nvme-[MODEL]_[SERIAL] \
+     mirror \
+     nvme-[MODEL]_[SERIAL] \
+     nvme-[MODEL]_[SERIAL]
