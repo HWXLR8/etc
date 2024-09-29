@@ -1,0 +1,1 @@
+/path/to/export          192.168.X.X(insecure,rw,all_squash,anonuid=65534,anongid=65534,async,no_subtree_check,crossmnt)
