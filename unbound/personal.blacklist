@@ -1,0 +1,5 @@
+local-zone: "facebook.com" redirect
+local-data: "facebook.com A 0.0.0.0"
+local-zone: "fb.com" redirect
+local-data: "fb.com A 0.0.0.0"
+
