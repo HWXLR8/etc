@@ -1,31 +1,32 @@
 #!/bin/bash
 
-alias c='clear'
-alias e='emacs -nw'
-alias l='ls --color=auto --group-directories-first -lh'
-alias t='ls --color=auto --group-directories-first -lh'
-alias ..='cd ..'
-alias v='alsamixer'
-alias s='slock'
-alias f='feh -F'
-alias randm='dir | shuf | xargs mpv -fs'
-alias randf='dir | shuf | xargs feh -F'
+SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
+SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
 
-alias gs='git status'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias ga='git add'
-alias gp='git push'
-alias gpom='git push origin master'
+# shell
+source "$SCRIPT_DIR/../lib/alias/shell.sh"
 
+# application shortcuts
+source "$SCRIPT_DIR/../lib/alias/app.sh"
+
+# git
+source "$SCRIPT_DIR/../lib/alias/git.sh"
+
+# youtube
+source "$SCRIPT_DIR/../lib/alias/yt.sh"
+
+# docker
+source "$SCRIPT_DIR/../lib/alias/docker.sh"
+
+# alsa
+source "$SCRIPT_DIR/../lib/alias/alsa.sh"
+
+# misc
+source "$SCRIPT_DIR/../lib/alias/misc.sh"
+
+# arch
 alias upgrade='sudo pacman -Syu'
-alias myip='curl http://ifconfig.me'
 
 export EDITOR="emacs -nw"
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin"
 export PS1='\[\e[0;35m\][\W]\[\e[0m\] '
-
-function hwxlr8 {
-    git clone git@github.com:hwxlr8/$1 || \
-    git clone https://github.com/hwxlr8/$1
-}

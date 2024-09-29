@@ -1,0 +1,12 @@
+# application shortcuts
+alias e='emacs -nw'
+alias em='emacs -nw --eval="(mu4e)"'
+alias lb='lsblk'
+alias v='alsamixer'
+alias l='slock'
+alias u='units -v'
+alias n='ncmpcpp'
+alias f='feh -F'
+alias m='mpv'
+alias g='grep -r -i'
+alias p='python'
