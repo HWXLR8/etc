@@ -1,2 +1,0 @@
-#!/bin/bash 
-firejail --dbus-user=none firefox

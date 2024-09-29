@@ -1,15 +1,15 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+source ../lib/common.sh
 
-echo "deleting current config files if exists"
+log "deleting current config files if exists"
 sudo rm -rv /etc/i3
 sudo rm -rv /etc/i3status.conf
 
-echo "creating links"
-ln -svf $SCRIPT_DIR/bashrc $HOME/.bashrc
-ln -svf $SCRIPT_DIR/inputrc $HOME/.inputrc
-ln -svf $SCRIPT_DIR/xinitrc $HOME/.xinitrc
-ln -svf $SCRIPT_DIR/Xresources $HOME/.Xresources
-sudo ln -svf $SCRIPT_DIR/i3 /etc/i3
-sudo ln -svf $SCRIPT_DIR/i3status.conf /etc/i3status.conf
+log "creating links"
+ln -svf $SD/bashrc $HOME/.bashrc
+ln -svf $SD/inputrc $HOME/.inputrc
+ln -svf $SD/xinitrc $HOME/.xinitrc
+ln -svf $SD/Xresources $HOME/.Xresources
+sudo ln -svf $SD/i3 /etc/i3
+sudo ln -svf $SD/i3status.conf /etc/i3status.conf

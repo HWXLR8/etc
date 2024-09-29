@@ -4,9 +4,7 @@ source ../lib/common.sh
 
 check_param
 
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-
-echo "removing old .asoundrc"
+log "removing old .asoundrc"
 rm -rfv $HOME/.asoundrc
-
-ln -svf $SCRIPT_DIR/$1 "$HOME"/.asoundrc
+log "linking"
+ln -svf $SD/$1 "$HOME"/.asoundrc

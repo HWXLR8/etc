@@ -1,6 +1,0 @@
-#!/bin/bash
-
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-
-sudo ln -sf $SCRIPT_DIR/firefox /usr/local/bin/firefox
-sudo ln -sf $SCRIPT_DIR/transmission-gtk /usr/local/bin/transmission-gtk

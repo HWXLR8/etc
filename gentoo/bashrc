@@ -1,28 +1,29 @@
  #!/bin/bash
 
-SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
-SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
+# this cannot be replaced with $SD from /lib/common due to linking
+SP=$(readlink -f "${BASH_SOURCE[0]}")
+SD=$(dirname "$SP")
 
 # shell
-source "$SCRIPT_DIR/../lib/alias/shell.sh"
+source "$SD/../lib/alias/shell.sh"
 
 # application shortcuts
-source "$SCRIPT_DIR/../lib/alias/app.sh"
+source "$SD/../lib/alias/app.sh"
 
 # git
-source "$SCRIPT_DIR/../lib/alias/git.sh"
+source "$SD/../lib/alias/git.sh"
 
 # youtube
-source "$SCRIPT_DIR/../lib/alias/yt.sh"
+source "$SD/../lib/alias/yt.sh"
 
 # docker
-source "$SCRIPT_DIR/../lib/alias/docker.sh"
+source "$SD/../lib/alias/docker.sh"
 
 # alsa
-source "$SCRIPT_DIR/../lib/alias/alsa.sh"
+source "$SD/../lib/alias/alsa.sh"
 
 # misc
-source "$SCRIPT_DIR/../lib/alias/misc.sh"
+source "$SD/../lib/alias/misc.sh"
 
 # gentoo
 alias upgrade='sudo emerge --sync; eix-update; sudo emerge -a -uDN world'
@@ -31,10 +32,9 @@ alias use="$EDITOR /etc/portage/package.use/flags"
 alias zzmisc="$EDITOR /etc/portage/package.use/zzmisc"
 alias eu="equery u"
 
-# environment variables
-export EDITOR='emacs -nw'
+# ENV
+source "$SD/../lib/env.sh"
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin:~/.local/bin:~/src/bin"
-export PS1='\[\e[0;35m\][\W]\[\e[0m\]$(__git_ps1) '
 export LADSPA_PATH=/usr/lib64/ladspa/
 export PYTHONPATH=/usr/lib/python3.11/site-packages/
 

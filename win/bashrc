@@ -1,11 +1,17 @@
 #!/bin/bash
 
-alias c='clear'
-alias e='emacs -nw'
-alias l='ls --color=auto --group-directories-first -lh'
-alias ga='git add'
-alias gp='git push'
-alias ..='cd ..'
+# this cannot be replaced with $SD from /lib/common due to linking
+SP=$(readlink -f "${BASH_SOURCE[0]}")
+SD=$(dirname "$SP")
 
-export EDITOR="emacs -nw"
-export PS1='\[\e[0;35m\][\W]\[\e[0m\] '
+# shell
+source "$SD/../lib/alias/shell.sh"
+
+# application shortcuts
+source "$SD/../lib/alias/app.sh"
+
+# git
+source "$SD/../lib/alias/git.sh"
+
+# ENV
+source "$SD/../lib/env.sh"

@@ -1,8 +1,10 @@
-RED='\033[0;31m'
+SD=$(dirname "$(readlink -f "$0")")
+
+RED='\033[1;31m'
 NC='\033[0m'
 
 function log {
-    echo -e "${RED}${1}${NC}"
+    echo -e "${RED}* ${1}${NC}"
 }
 
 function force_root {

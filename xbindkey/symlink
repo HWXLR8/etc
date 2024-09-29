@@ -1,5 +1,6 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+source ../lib/common.sh
 
-ln -svf $SCRIPT_DIR/xbindkeysrc "$HOME"/.xbindkeysrc
+log "linking"
+ln -svf $SD/xbindkeysrc "$HOME"/.xbindkeysrc
