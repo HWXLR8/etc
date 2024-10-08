@@ -4,6 +4,7 @@ urxvt*scrollBar:		false
 urxvt.font:xft:terminus:size=9
 URxvt.perl-ext-common: "default, -searchable-scrollback"
 URxvt*internalBorder: 20
+URxvt.geometry: 80x-1
 
 ! special
 urxvt*.foreground:   #a89898

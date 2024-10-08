@@ -6,7 +6,6 @@ emerge -a \
        ntp \
        htop \
        app-text/tree \
-       app-misc/screen \
        eix \
        gentoolkit \
        sysklogd \
@@ -14,7 +13,7 @@ emerge -a \
        xset \
        i3 \
        i3status \
-       st \
+       rxvt-unicode \
        terminus-font \
        slock \
        scrot \

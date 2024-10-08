@@ -4,7 +4,6 @@ source ../lib/common.sh
 
 log "removing old dirs"
 sudo rm -rv /etc/portage/package.use
-sudo rm -rv /etc/portage/savedconfig
 rm -rf "$HOME"/.config/i3
 
 log "linking"
@@ -12,6 +11,6 @@ ln -svf $SD/bashrc "$HOME"/.bashrc
 ln -svf $SD/inputrc "$HOME"/.inputrc
 ln -svf $SD/xinitrc "$HOME"/.xinitrc
 ln -svf $SD/i3 "$HOME"/.config/
+ln -svf $SD/../x11/Xresources $HOME/.Xresources
 sudo ln -svf $SD/i3status.conf /etc/
 sudo ln -sv $SD/package.use /etc/portage/
-sudo ln -sv $SD/savedconfig /etc/portage/

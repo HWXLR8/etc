@@ -10,6 +10,6 @@ log "creating links"
 ln -svf $SD/bashrc $HOME/.bashrc
 ln -svf $SD/inputrc $HOME/.inputrc
 ln -svf $SD/xinitrc $HOME/.xinitrc
-ln -svf $SD/Xresources $HOME/.Xresources
+ln -svf $SD/../x11/Xresources $HOME/.Xresources
 sudo ln -svf $SD/i3 /etc/i3
 sudo ln -svf $SD/i3status.conf /etc/i3status.conf
