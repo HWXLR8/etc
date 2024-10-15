@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source ../lib/common.sh
+
+usr=$(whoami)
+
+log "installing cronie"
+sudo emerge -a cronie
+log "adding user $user to cron group"
+sudo usermod -a -G cron $usr
+log "starting system service"
+sudo rc-service cronie start
+sudo rc-update add cronie
