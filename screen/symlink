@@ -3,4 +3,4 @@
 source ../lib/common.sh
 
 log "linking"
-ln -svf $SD/screenrc "$HOME"/.screenrc
+ln -svf $PWD/screenrc "$HOME"/.screenrc

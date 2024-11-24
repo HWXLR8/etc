@@ -1,6 +1,4 @@
 #!/bin/bash
 
-source ../lib/common.sh
-
 log "linking"
-ln -svf $SD/xbindkeysrc "$HOME"/.xbindkeysrc
+ln -svf $PWD/xbindkeysrc "$HOME"/.xbindkeysrc

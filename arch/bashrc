@@ -1,28 +1,31 @@
 #!/bin/bash
 
-SCRIPT_PATH=$(readlink -f "${BASH_SOURCE[0]}")
-SCRIPT_DIR=$(dirname "$SCRIPT_PATH")
+SP=$(readlink -f "${BASH_SOURCE[0]}")
+SDL=$(dirname "$SP")
 
 # shell
-source "$SCRIPT_DIR/../lib/alias/shell.sh"
+source "$SDL/../lib/alias/shell.sh"
 
 # application shortcuts
-source "$SCRIPT_DIR/../lib/alias/app.sh"
+source "$SDL/../lib/alias/app.sh"
 
 # git
-source "$SCRIPT_DIR/../lib/alias/git.sh"
+source "$SDL/../lib/alias/git.sh"
 
 # youtube
-source "$SCRIPT_DIR/../lib/alias/yt.sh"
+source "$SDL/../lib/alias/yt.sh"
 
 # docker
-source "$SCRIPT_DIR/../lib/alias/docker.sh"
+source "$SDL/../lib/alias/docker.sh"
 
 # alsa
-source "$SCRIPT_DIR/../lib/alias/alsa.sh"
+source "$SDL/../lib/alias/alsa.sh"
 
 # misc
-source "$SCRIPT_DIR/../lib/alias/misc.sh"
+source "$SDL/../lib/alias/misc.sh"
+
+# utility functions
+source "$SDL/../lib/util.sh"
 
 # arch
 alias upgrade='sudo pacman -Syu'

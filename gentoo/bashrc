@@ -1,42 +1,44 @@
- #!/bin/bash
+#!/bin/bash
 
-# this cannot be replaced with $SD from /lib/common due to linking
 SP=$(readlink -f "${BASH_SOURCE[0]}")
-SD=$(dirname "$SP")
+SDL=$(dirname "$SP")
+
+source "$SDL/../lib/common.sh"
 
 # shell
-source "$SD/../lib/alias/shell.sh"
+source "$SDL/../lib/alias/shell.sh"
 
 # application shortcuts
-source "$SD/../lib/alias/app.sh"
+source "$SDL/../lib/alias/app.sh"
 
 # git
-source "$SD/../lib/alias/git.sh"
+source "$SDL/../lib/alias/git.sh"
 
 # youtube
-source "$SD/../lib/alias/yt.sh"
+source "$SDL/../lib/alias/yt.sh"
 
 # docker
-source "$SD/../lib/alias/docker.sh"
+source "$SDL/../lib/alias/docker.sh"
 
 # alsa
-source "$SD/../lib/alias/alsa.sh"
+source "$SDL/../lib/alias/alsa.sh"
+
+# hosts
+source "$SDL/../lib/alias/host.sh"
 
 # misc
-source "$SD/../lib/alias/misc.sh"
+source "$SDL/../lib/alias/misc.sh"
 
-# gentoo
-alias upgrade='sudo emerge --sync; eix-update; sudo emerge -a -uDN world'
-alias elog='tail -f /var/log/emerge.log'
-alias use="$EDITOR /etc/portage/package.use/flags"
-alias zzmisc="$EDITOR /etc/portage/package.use/zzmisc"
-alias eu="equery u"
+# utility functions
+source "$SDL/../lib/util.sh"
 
 # ENV
-source "$SD/../lib/env.sh"
+source "$SDL/../lib/env.sh"
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin:~/.local/bin:~/src/bin"
 export LADSPA_PATH=/usr/lib64/ladspa/
 export PYTHONPATH=/usr/lib/python3.11/site-packages/
+
+complete -cf sudo
 
 # synchronize X/GTK clipboards
 autocutsel &

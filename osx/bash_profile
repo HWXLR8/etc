@@ -1,20 +1,21 @@
 #!/bin/bash
 
-# this cannot be replaced with $SD from /lib/common due to linking
 SP=$(readlink -f "${BASH_SOURCE[0]}")
-SD=$(dirname "$SP")
+SDL=$(dirname "$SP")
+
+source "$SDL/../lib/common.sh"
 
 # shell
-source "$SD/../lib/alias/shell.sh"
+source "$SDL/../lib/alias/shell.sh"
 
 # application shortcuts
-source "$SD/../lib/alias/app.sh"
+source "$SDL/../lib/alias/app.sh"
 
 # git
-source "$SD/../lib/alias/git.sh"
+source "$SDL/../lib/alias/git.sh"
 
 # ENV
-source "$SD/../lib/env.sh"
+source "$SDL/../lib/env.sh"
 
 alias l='gls -l --color --sort=extension --group-directories-first'
 

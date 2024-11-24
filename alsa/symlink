@@ -7,4 +7,4 @@ check_param
 log "removing old .asoundrc"
 rm -rfv $HOME/.asoundrc
 log "linking"
-ln -svf $SD/$1 "$HOME"/.asoundrc
+ln -svf $PWD/$1 "$HOME"/.asoundrc

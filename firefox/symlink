@@ -7,8 +7,8 @@ mkdir -pv $HOME/.config/
 
 FF=($HOME/.mozilla/firefox/*.default-esr)
 
-ln -svf $SD/user-dirs.dirs $HOME/.config/user-dirs.dirs
-ln -svf $SD/user.js $FF
+ln -svf $PWD/user-dirs.dirs $HOME/.config/user-dirs.dirs
+ln -svf $PWD/user.js $FF
 mkdir -v $FF/chrome
-ln -svf $SD/userChrome.css $FF/chrome
-ln -svf $SD/userContent.css $FF/chrome
+ln -svf $PWD/userChrome.css $FF/chrome
+ln -svf $PWD/userContent.css $FF/chrome

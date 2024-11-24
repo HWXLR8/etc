@@ -7,9 +7,9 @@ sudo rm -rv /etc/i3
 sudo rm -rv /etc/i3status.conf
 
 log "creating links"
-ln -svf $SD/bashrc $HOME/.bashrc
-ln -svf $SD/inputrc $HOME/.inputrc
-ln -svf $SD/xinitrc $HOME/.xinitrc
-ln -svf $SD/../x11/Xresources $HOME/.Xresources
-sudo ln -svf $SD/i3 /etc/i3
-sudo ln -svf $SD/i3status.conf /etc/i3status.conf
+ln -svf $PWD/bashrc $HOME/.bashrc
+ln -svf $PWD/inputrc $HOME/.inputrc
+ln -svf $PWD/xinitrc $HOME/.xinitrc
+ln -svf $PWD/../x11/Xresources $HOME/.Xresources
+sudo ln -svf $PWD/i3 /etc/i3
+sudo ln -svf $PWD/i3status.conf /etc/i3status.conf

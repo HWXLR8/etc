@@ -14,6 +14,7 @@ alias gb='git branch'
 alias gl='git log'
 alias gp='git push'
 alias gpom='git push origin master'
+alias gcl='git clone'
 
 source ~/src/etc/git/git-prompt.sh
 

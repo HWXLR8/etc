@@ -3,6 +3,5 @@
 source ../lib/common.sh
 
 log "linking..."
-sudo ln -svf $SD/resolv.conf.head /etc/
-
+sudo ln -svf $PWD/resolv.conf.head /etc/
 log "restart dhcp client to apply changes"
