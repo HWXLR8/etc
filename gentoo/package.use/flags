@@ -14,7 +14,7 @@ dev-cpp/cairomm X
 dev-cpp/gtkmm X
 dev-lang/R bash-completion
 dev-lang/php mysql mysqli sqlite cgi pdo
-dev-lang/python -tk
+dev-lang/python tk
 dev-libs/libgcrypt static-libs
 dev-libs/libtomcrypt -libtommath
 dev-perl/Net-HTTP minimal
@@ -42,7 +42,7 @@ media-gfx/darktable cpu_flags_x86_sse3
 media-gfx/feh
 media-gfx/gimp png svg
 media-gfx/imagemagick jpeg png webp
-media-gfx/inkscape
+media-gfx/inkscape X imagemagick jpeg
 media-gfx/openscad emacs
 media-gfx/sane-backends -ipv6 threads usb
 media-gfx/xsane jpeg lcms ocr png tiff
@@ -52,7 +52,7 @@ media-libs/libbluray utils
 media-libs/libcaca imlib
 media-libs/libglvnd X
 media-libs/libsdl X alsa
-media-libs/libsdl2 X alsa udev opengl vulkan
+media-libs/libsdl2 X alsa libsamplerate udev opengl vulkan
 media-libs/mesa vulkan llvm wayland
 media-libs/openal alsa
 media-libs/phonon -vlc qt5
@@ -90,7 +90,7 @@ sys-block/gparted fat ntfs
 sys-devel/llvm LLVM_TARGETS: x86
 sys-fs/cryptsetup urandom
 sys-kernel/genkernel -firmware
-www-client/firefox hwaccel wayland
+www-client/firefox hwaccel -telemetry
 www-client/qutebrowser python_targets_python3_4 gstreamer
 www-servers/lighttpd php
 x11-drivers/nvidia-drivers
@@ -100,7 +100,10 @@ x11-libs/pango -introspection
 x11-misc/dunst dunstify
 x11-misc/picom opengl
 x11-misc/slock savedconfig
-x11-terms/rxvt-unicode 256-color blink fading-colors pixbuf secondary-wheel unicode3 wcwidth xft -vanilla
+x11-terms/rxvt-unicode 256-color blink fading-colors pixbuf secondary-wheel unicode3 wcwidth xft -vanilla perl
 x11-terms/st savedconfig
 games-emulation/vbam wxwidgets
 games-fps/gzdoom gtk vulkan
+media-gfx/darktable geolocation opencl
+media-sound/audacity alsa ffmpeg -ladspa -lv2
+app-emulation/wine-vanilla smartcard
