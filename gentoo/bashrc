@@ -32,11 +32,21 @@ source "$SDL/../lib/alias/misc.sh"
 # utility functions
 source "$SDL/../lib/util.sh"
 
+# gentoo
+alias upgrade='sudo emerge --sync; eix-update; sudo emerge -a -uDN world'
+alias elog='tail -f /var/log/emerge.log'
+alias use="$EDITOR /etc/portage/package.use/flags"
+alias zzmisc="$EDITOR /etc/portage/package.use/zzmisc"
+alias eu="equery u"
+
 # ENV
 source "$SDL/../lib/env.sh"
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin:~/.local/bin:~/src/bin"
 export LADSPA_PATH=/usr/lib64/ladspa/
-export PYTHONPATH=/usr/lib/python3.11/site-packages/
+export PYTHONPATH=/usr/lib/python3.12/site-packages/
+
+# theme
+export QT_STYLE_OVERRIDE=Adwaita-Dark
 
 complete -cf sudo
 
