@@ -1,10 +1,20 @@
-urxvt*background:               black
-urxvt*foreground:               white
-urxvt*scrollBar:		false
-urxvt.font:xft:terminus:size=9
-URxvt.perl-ext-common: "default, -searchable-scrollback"
-URxvt*internalBorder: 20
-URxvt.geometry: 80x-1
+urxvt*background: black
+urxvt*foreground: white
+urxvt*scrollBar: false
+urxvt.font: xft:Terminus:size=12,xft:MiSans:size=12
+! URxvt.perl-ext-common: "default, -searchable-scrollback"
+urxvt*internalBorder: 40
+urxvt.geometry: 80x-1
+
+! resize font
+URxvt.perl-ext-common: resize-font
+
+! scaling
+Xft.dpi: 192
+Xft.autohint: 0
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.rgba: none
 
 ! special
 urxvt*.foreground:   #a89898
