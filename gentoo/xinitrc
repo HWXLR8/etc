@@ -1,11 +1,14 @@
 export GTK_THEME=Adwaita:dark
 export QT_STYLE_OVERRIDE=Adwaita-Dark
 
-# xrandr --output HDMI-A-0 --mode 1920x1080 --rate 60 --rotate normal  --pos 1080x650 \
-#        --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --rotate left --pos 0x0
-
+# display and resolution
 xrandr --output DisplayPort-1 --mode 3840x2160 --rate 120
 
+# enable TearFree mode on the connected display
+d=$(xrandr | grep -w "connected" | cut -d " " -f1)
+xrandr --output $d --set TearFree on
+
+# wallpaper
 feh --bg-scale $HOME/src/etc/wall/grey.png
 
 # disable screen blanking
@@ -13,10 +16,13 @@ xset -dpms
 xset s noblank
 xset s off
 
+# screen color temp
 sct 3000
 
+# kebindings
 xbindkeys
 
+# reload term settings
 xrdb .Xresources
 
 exec i3
