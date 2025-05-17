@@ -2,7 +2,7 @@
 
 source ../lib/common.sh
 
-check_param
+check_param $1
 
 log "removing old .asoundrc"
 rm -rfv $HOME/.asoundrc

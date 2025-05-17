@@ -43,12 +43,18 @@ alias eu="equery u"
 source "$SDL/../lib/env.sh"
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin:~/.local/bin:~/src/bin"
 export LADSPA_PATH=/usr/lib64/ladspa/
-export PYTHONPATH=/usr/lib/python3.12/site-packages/
 
 # theme
 export QT_STYLE_OVERRIDE=Adwaita-Dark
 
 complete -cf sudo
+
+# ESP32
+function esp32 {
+    cd $HOME/src/esp-idf
+    unset PYTHONPATH
+    . export.sh
+}
 
 # synchronize X/GTK clipboards
 autocutsel &

@@ -5,7 +5,7 @@ source ../lib/common.sh
 log "creating directory if it doesn't exist"
 mkdir -pv $HOME/.config/
 
-FF=($HOME/.mozilla/firefox/*.default-esr)
+FF=($HOME/.mozilla/firefox/*.default-release)
 
 ln -svf $PWD/user-dirs.dirs $HOME/.config/user-dirs.dirs
 ln -svf $PWD/user.js $FF

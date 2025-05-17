@@ -83,7 +83,7 @@ net-mail/notmuch mutt emacs python
 net-p2p/transmission gtk
 net-print/cups usb
 net-wireless/bluez test-programs python_single_target_python3_4
-sci-electronics/kicad
+sci-electronics/kicad python_single_target_python3_12
 sys-auth/elogind -policykit
 sys-auth/polkit elogind
 sys-block/gparted fat ntfs

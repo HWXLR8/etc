@@ -17,9 +17,8 @@ function append_xinit {
 }
 
 function check_param {
-    if [ -z ${1+x} ];
-    then
-	log "no argument supplied"
-	exit
+    if [ "$#" -eq 0 ]; then
+        log "no arguments supplied"
+        exit 1
     fi
 }

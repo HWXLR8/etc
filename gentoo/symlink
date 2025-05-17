@@ -3,8 +3,10 @@
 source ../lib/common.sh
 
 log "removing old dirs"
-sudo rm -rv /etc/portage/package.use
-rm -rf "$HOME"/.config/i3
+rm -rfv "$HOME"/.config/i3
+sudo rm -rfv /etc/portage/package.unmask
+sudo rm -rfv /etc/portage/package.accept_keywords
+sudo rm -rfv /etc/portage/package.license
 
 log "linking"
 ln -svf $PWD/bashrc "$HOME"/.bashrc
@@ -13,4 +15,7 @@ ln -svf $PWD/xinitrc "$HOME"/.xinitrc
 ln -svf $PWD/i3 "$HOME"/.config/
 ln -svf $PWD/../x11/Xresources $HOME/.Xresources
 sudo ln -svf $PWD/i3status.conf /etc/
-sudo ln -sv $PWD/package.use /etc/portage/
+sudo ln -svf $PWD/package.use /etc/portage/
+sudo ln -svf $PWD/package.unmask /etc/portage/
+sudo ln -svf $PWD/package.accept_keywords /etc/portage/
+sudo ln -svf $PWD/package.license /etc/portage/

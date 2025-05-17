@@ -3,6 +3,7 @@
 emerge -a \
        alsa-utils \
        emacs \
+       app-emacs/ebuild-mode \
        ntp \
        htop \
        app-text/tree \
