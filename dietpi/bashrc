@@ -1,0 +1,36 @@
+#!/bin/bash
+
+SP=$(readlink -f "${BASH_SOURCE[0]}")
+SDL=$(dirname "$SP")
+
+# shell
+source "$SDL/../lib/alias/shell.sh"
+
+# application shortcuts
+source "$SDL/../lib/alias/app.sh"
+
+# git
+source "$SDL/../lib/alias/git.sh"
+
+# youtube
+source "$SDL/../lib/alias/yt.sh"
+
+# docker
+source "$SDL/../lib/alias/docker.sh"
+
+# alsa
+source "$SDL/../lib/alias/alsa.sh"
+
+# misc
+source "$SDL/../lib/alias/misc.sh"
+
+# utility functions
+source "$SDL/../lib/util.sh"
+
+# arch
+alias upgrade='sudo pacman -Syu'
+
+export EDITOR="emacs -nw"
+export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin"
+export PS1='\[\e[0;35m\][\W]\[\e[0m\] '
+export XDG_RUNTIME_DIR=/run/user/$(id -u)

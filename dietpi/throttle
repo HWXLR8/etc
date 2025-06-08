@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+
+import subprocess
+
+throttling_flags = {
+    0: "Under-voltage detected",
+    1: "Arm frequency capped",
+    2: "Currently throttled",
+    3: "Soft temperature limit active",
+    16: "Under-voltage has occurred",
+    17: "Arm frequency capping has occurred",
+    18: "Throttling has occurred",
+    19: "Soft temperature limit has occurred"
+}
+
+RED = "\033[91m"
+RESET = "\033[0m"
+
+def parse_throttled():
+    out = subprocess.check_output(['vcgencmd', 'get_throttled']).decode()
+    val = int(out.strip().split('=')[1], 16)
+    print(f"Raw throttled value: {val:#010x}")
+    for bit, desc in throttling_flags.items():
+        if val & (1 << bit):
+            print(f"{RED}[!]{RESET} {desc}")
+
+if __name__ == "__main__":
+    parse_throttled()
