@@ -1,8 +1,12 @@
-RED='\033[1;31m'
-NC='\033[0m'
+RED=$'\033[1;31m'
+NC=$'\033[0m'
 
 function log {
     echo -e "${RED}* ${1}${NC}"
+}
+
+function confirm {
+    read -p "${RED}* ${1}${NC}"
 }
 
 function force_root {
