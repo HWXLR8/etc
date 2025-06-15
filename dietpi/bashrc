@@ -27,9 +27,6 @@ source "$SDL/../lib/alias/misc.sh"
 # utility functions
 source "$SDL/../lib/util.sh"
 
-# arch
-alias upgrade='sudo pacman -Syu'
-
 export EDITOR="emacs -nw"
 export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin"
 export PS1='\[\e[0;35m\][\W]\[\e[0m\] '
