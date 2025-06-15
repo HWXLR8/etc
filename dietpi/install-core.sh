@@ -13,4 +13,6 @@ sudo apt install \
      nfs-client \
      grim \
      slurp \
-     wl-clipboard
+     wl-clipboard \
+     python3 \
+     python3-pip
