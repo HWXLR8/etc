@@ -99,17 +99,24 @@ bar {
         }
 }
 
+# gaps
 default_border pixel 0px
 gaps inner 25
 gaps outer 45
 smart_gaps on
 
-# scaling
-# output HDMI-A-1 scale 2
+# resolution
+output HDMI-A-1 scale 1
 output HDMI-A-1 resolution 1920x1080@120Hz
+# output HDMI-A-1 resolution 3840x2160@60Hz
 
 output * {
        bg #000000 solid_color
 }
 
+# custom shortcuts
 bindsym --release $mod+s exec bash -c 'file="/tmp/$(date +%b%d_%H-%M-%S).png"; grim -g "$(slurp)" "$file" && wl-copy --type image/png < "$file"'
+
+# env variables
+setenv QT_STYLE_OVERRIDE=Adwaita-Dark
+setenv GTK_THEME=Adwaita:dark
