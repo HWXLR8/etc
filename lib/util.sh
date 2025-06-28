@@ -35,3 +35,7 @@ function d {
 function jlcpcb {
     kikit fab jlcpcb $1 .
 }
+
+function b {
+    nohup "$@" > /dev/null 2>&1 &
+}
