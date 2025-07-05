@@ -115,8 +115,8 @@ output * {
 }
 
 # custom shortcuts
-bindsym --release $mod+s exec bash -c 'file="/tmp/$(date +%b%d_%H-%M-%S).png"; grim -g "$(slurp)" "$file" && wl-copy --type image/png < "$file"'
+bindsym $mod+s exec bash -c 'file="/tmp/$(date +%b%d_%H-%M-%S).png"; grim -g "$(slurp)" "$file" && wl-copy --type image/png < "$file"'
 
 # env variables
-setenv QT_STYLE_OVERRIDE=Adwaita-Dark
-setenv GTK_THEME=Adwaita:dark
+# setenv QT_STYLE_OVERRIDE=Adwaita-Dark
+# setenv GTK_THEME=Adwaita:dark
