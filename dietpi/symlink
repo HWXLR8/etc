@@ -5,6 +5,7 @@ source ../lib/common.sh
 log "deleting current config files if exists"
 sudo rm -rfv $HOME/.config/sway
 sudo rm -rfv $HOME/.config/foot
+sudo rm -rfv $HOME/.asoundrc
 
 log "creating links"
 ln -svf $PWD/bashrc $HOME/.bashrc
@@ -13,3 +14,4 @@ log "mkdir ~/.config if it doesn't exist"
 mkdir -pv $HOME/.config
 ln -svf $PWD/sway $HOME/.config/sway
 ln -svf $PWD/foot $HOME/.config/foot
+ln -svf $PWD/asoundrc $HOME/.asoundrc
