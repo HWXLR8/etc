@@ -16,9 +16,6 @@ faillock --user [USERNAME] --reset
  1. zpool import -a -l # to import backup disk
  2. zfs snapshot pool@backup-[MON]-[DAY]-[YEAR] # take snapshot
  3. zfs send --raw pool@backup-[MON]-[DAY]-[YEAR] | pv --wait | sudo zfs receive backup-pool@backup-[MON]-[DAY]-[YEAR]
-** mounting encrypted zpool
- 1. sudo zfs load-key -a
- 2. sudo zfs mount [POOL]
 
 * format disk for windows from linux
  1. fdisk 'g' for GPT label

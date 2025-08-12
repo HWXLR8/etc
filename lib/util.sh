@@ -128,3 +128,27 @@ strip-ext() {
         mv -v -- "$f" "${f%.$1}"
     done
 }
+
+# check which authentication methods a host accepts
+ssh-auth-method() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: ssh-auth-method [HOST]"
+        return 1
+    fi
+
+    ssh -o PreferredAuthentications=none \
+        -o PasswordAuthentication=no \
+        -o ChallengeResponseAuthentication=no \
+        -vv $1 2>&1 | grep "Authentications that can continue"
+}
+
+# unlock an encrypted zfs pood
+zfs-unlock() {
+    if [ $# -eq 0 ]; then
+        echo "usage: zfs-unlock [POOL]"
+        return 1
+    fi
+
+    sudo zfs load-key -a
+    sudo zfs mount $1
+}
