@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source ../lib/common.sh
+
+ln -svf $PWD/../x11/Xresources $HOME/.Xresources

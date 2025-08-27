@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source ../lib/common.sh
+
+ln -svf $PWD/bashrc "$HOME"/.bashrc
+ln -svf $PWD/inputrc "$HOME"/.inputrc

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source ../lib/common.sh
+
+log "removing old i3 config"
+rm -rfv "$HOME"/.config/i3
+sudo rm -rfv /etc/i3status.conf
+
+log "linking"
+ln -svf $PWD/i3 "$HOME"/.config/
+sudo ln -svf $PWD/i3status.conf /etc/
