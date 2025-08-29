@@ -1,0 +1,26 @@
+app-admin/sudo -sendmail
+app-editors/emacs ssl -inotify -xpm
+dev-vcs/git -python -pcre -pcre-jit -perl
+games-emulation/dolphin alsa opengl openal ffmpeg lto bluetooth vulkan
+games-emulation/mednafen alsa
+games-fps/doomsday tools
+media-fonts/terminus-font distinct-l
+media-gfx/imagemagick jpeg png webp
+media-gfx/inkscape X imagemagick jpeg
+media-gfx/openscad emacs
+media-libs/libsdl X alsa
+media-libs/libsdl2 X alsa libsamplerate udev opengl vulkan
+media-libs/sdl-image png gif jpeg tiff
+media-libs/mesa vulkan llvm wayland
+media-libs/openal alsa
+media-libs/vulkan-loader X
+media-libs/vulkan-loader layers
+media-sound/alsa-utils -libsamplerate
+media-video/ffmpeg mp3 openssl alsa libdrm opengl opus vorbis vulkan x264 x265 vpx sdl
+media-video/mpv
+net-fs/nfs-utils nfsv41
+net-p2p/transmission gtk
+sys-auth/elogind -policykit
+sys-auth/polkit elogind
+sys-block/gparted fat ntfs
+games-fps/gzdoom gtk vulkan
