@@ -1,19 +1,19 @@
 app-admin/sudo -sendmail
 app-admin/testdisk jpeg ntfs
 app-crypt/pinentry -gtk
-app-editors/emacs ssl -inotify -xpm
-app-emulation/qemu sdl gtk
+app-editors/emacs -inotify -xpm ssl
+app-emulation/qemu gtk sdl
 app-forensics/chkrootkit -cron
 app-i18n/fcitx gtk gtk3 qt4
 app-text/poppler boost cairo png tiff
-app-text/texlive dvi2tty epspdf extra graphics linguas_en publishers science xetex cjk png X
+app-text/texlive X cjk dvi2tty epspdf extra graphics linguas_en png publishers science xetex
 cross-avr/binutils multitarget
 cross-avr/gcc -openmp
 cross-avr/gcc -sanitize
 dev-cpp/cairomm X
 dev-cpp/gtkmm X
 dev-lang/R bash-completion
-dev-lang/php mysql mysqli sqlite cgi pdo
+dev-lang/php cgi mysql mysqli pdo sqlite
 dev-lang/python tk
 dev-libs/libgcrypt static-libs
 dev-libs/libtomcrypt -libtommath
@@ -23,22 +23,25 @@ dev-python/PyQt5 -printsupport
 dev-python/matplotlib tk
 dev-python/pillow jpeg webp
 dev-qt/qtgui jpeg
-dev-qt/qtwebengine widgets alsa
+dev-qt/qtwebengine alsa widgets
 dev-util/cmake internal-jsoncpp
 dev-util/nvidia-cuda-sdk -doc -examples opencl
 dev-util/vulkan-tools cube
-dev-vcs/git -python -pcre -pcre-jit -perl
-games-emulation/dolphin alsa opengl openal ffmpeg lto bluetooth vulkan
+dev-vcs/git -pcre -pcre-jit -perl -python
+games-emulation/dolphin alsa bluetooth ffmpeg lto openal opengl vulkan
 games-emulation/mednafen alsa
+games-emulation/vbam wxwidgets
 games-fps/doomsday tools
+games-fps/gzdoom gtk vulkan
 games-util/deutex png
 kde-frameworks/kauth -policykit
-kde-frameworks/kio -handbook -kwallet -acl
-mail-client/mutt gnutls gpg imap pop smtp sasl -berkdb
+kde-frameworks/kio -acl -handbook -kwallet
+mail-client/mutt -berkdb gnutls gpg imap pop sasl smtp
 mail-client/thunderbird l10n_zh-CN l10n_zh-TW
 media-fonts/arphicfonts X
-media-fonts/terminus-font distinct-l X
+media-fonts/terminus-font X distinct-l
 media-gfx/darktable cpu_flags_x86_sse3
+media-gfx/darktable geolocation opencl
 media-gfx/feh
 media-gfx/gimp png svg
 media-gfx/imagemagick jpeg png webp
@@ -46,43 +49,43 @@ media-gfx/inkscape X imagemagick jpeg
 media-gfx/openscad emacs
 media-gfx/sane-backends -ipv6 threads usb
 media-gfx/xsane jpeg lcms ocr png tiff
-media-libs/harfbuzz -cairo -introspection -icu
+media-libs/harfbuzz -cairo -icu -introspection
 media-libs/imlib2 gif jpeg mp3 png tiff
 media-libs/libbluray utils
 media-libs/libcaca imlib
 media-libs/libglvnd X
 media-libs/libsdl X alsa
-media-libs/libsdl2 X alsa libsamplerate udev opengl vulkan
-media-libs/mesa vulkan llvm wayland
+media-libs/libsdl2 X alsa libsamplerate opengl udev vulkan
+media-libs/mesa llvm vulkan wayland
 media-libs/openal alsa
 media-libs/phonon -vlc qt5
 media-libs/portaudio alsa
-media-libs/sdl-image png gif jpeg tiff
+media-libs/sdl-image gif jpeg png tiff
 media-libs/vulkan-loader X
 media-libs/vulkan-loader layers
 media-libs/x265 numa
 media-sound/abcde aac cdparanoia cdr flac vorbis
 media-sound/alsa-utils -libsamplerate
+media-sound/audacity -ladspa -lv2 alsa ffmpeg
 media-sound/milkytracker alsa
-media-sound/mpd lame ogg flac vorbis
+media-sound/mpd flac lame ogg vorbis
 media-sound/ncmpcpp clock taglib visualizer
 media-sound/timidity++ alsa
-media-video/ffmpeg X mp3 openssl bluray alsa libdrm opengl opus vorbis vulkan x264 x265 vpx sdl nvenc
+media-video/ffmpeg X alsa bluray libdrm mp3 nvenc opengl openssl opus sdl vorbis vpx vulkan x264 x265
 media-video/mkvtoolnix qt5
-media-video/mplayer mp3 mng png xinerama opengl vorbis vcd
+media-video/mplayer mng mp3 opengl png vcd vorbis xinerama
 media-video/mpv
 media-video/obs-studio nvenc v4l
-media-video/vlc v4l httpd lua xml
+media-video/vlc httpd lua v4l xml
 net-dns/bind dlz urandom
 net-dns/unbound dnscrypt threads
-net-fs/nfs-utils nfsv41
+net-fs/nfs-utils nfsv3 nfsv4 caps
 net-libs/libtorrent-rasterbar python
-net-libs/rb_libtorrent python
 net-mail/mu emacs
-net-mail/notmuch mutt emacs python
+net-mail/notmuch emacs mutt python
 net-p2p/transmission gtk
 net-print/cups usb
-net-wireless/bluez test-programs python_single_target_python3_4
+net-wireless/bluez python_single_target_python3_4 test-programs
 sci-electronics/kicad python_single_target_python3_12
 sys-auth/elogind -policykit
 sys-auth/polkit elogind
@@ -90,8 +93,8 @@ sys-block/gparted fat ntfs
 sys-devel/llvm LLVM_TARGETS: x86
 sys-fs/cryptsetup urandom
 sys-kernel/genkernel -firmware
-www-client/firefox hwaccel -telemetry
-www-client/qutebrowser python_targets_python3_4 gstreamer
+www-client/firefox -telemetry hwaccel
+www-client/qutebrowser gstreamer python_targets_python3_4
 www-servers/lighttpd php
 x11-drivers/nvidia-drivers
 x11-libs/agg sdl
@@ -100,10 +103,5 @@ x11-libs/pango -introspection
 x11-misc/dunst dunstify
 x11-misc/picom opengl
 x11-misc/slock savedconfig
-x11-terms/rxvt-unicode 256-color blink fading-colors pixbuf secondary-wheel unicode3 wcwidth xft -vanilla perl
+x11-terms/rxvt-unicode -vanilla 256-color blink fading-colors perl pixbuf secondary-wheel unicode3 wcwidth xft
 x11-terms/st savedconfig
-games-emulation/vbam wxwidgets
-games-fps/gzdoom gtk vulkan
-media-gfx/darktable geolocation opencl
-media-sound/audacity alsa ffmpeg -ladspa -lv2
-app-emulation/wine-vanilla smartcard
