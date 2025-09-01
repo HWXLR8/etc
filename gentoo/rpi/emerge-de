@@ -1,0 +1,7 @@
+#!/bin/bash
+
+emerge -a \
+       gui-wm/sway \
+       media-fonts/terminus-font \
+       media-sound/alsa-utils \
+       net-misc/yt-dlp

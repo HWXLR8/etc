@@ -1,33 +1,10 @@
 #!/bin/bash
 
 emerge -a \
-       app-misc/neofetch \
+       app-misc/fastfetch \
        app-portage/eix \
        app-portage/gentoolkit \
        app-portage/cpuid2cpuflags \
-       dev-embedded/rpi-eeprom
-
-emerge -a \
-       alsa-utils \
-       emacs \
-       app-emacs/ebuild-mode \
-       ntp \
-       htop \
-       app-text/tree \
-       eix \
-       gentoolkit \
-       sysklogd \
-       xorg-server \
-       xset \
-       terminus-font \
-       feh \
-       mpv \
-       nanumfont \
-       neofetch \
-       xbindkeys \
-       firefox \
-       usbutils \
-       cpuid2cpuflags \
-       nfs-utils \
-       yt-dlp \
-       autocutsel
+       dev-embedded/rpi-eeprom \
+       sys-process/htop \
+       nfs-utils

@@ -6,14 +6,14 @@ games-emulation/mednafen alsa
 games-fps/doomsday tools
 media-fonts/terminus-font distinct-l
 media-gfx/imagemagick jpeg png webp
-media-gfx/inkscape X imagemagick jpeg
+media-gfx/inkscape imagemagick jpeg
 media-gfx/openscad emacs
-media-libs/libsdl X alsa
-media-libs/libsdl2 X alsa libsamplerate udev opengl vulkan
+media-libs/libsdl alsa
+media-libs/libsdl2 alsa libsamplerate udev opengl vulkan
 media-libs/sdl-image png gif jpeg tiff
 media-libs/mesa vulkan llvm wayland
 media-libs/openal alsa
-media-libs/vulkan-loader X
+media-libs/vulkan-loader
 media-libs/vulkan-loader layers
 media-sound/alsa-utils -libsamplerate
 media-video/ffmpeg mp3 openssl alsa libdrm opengl opus vorbis vulkan x264 x265 vpx sdl
