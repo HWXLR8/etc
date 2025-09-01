@@ -1,2 +1,2 @@
 0 0 1 * * zpool scrub bucket
-0 4 * * 0 $HOME/src/gh-backup/backup.py >> $HOME/src/gh-backup/log
+0 4 * * * $HOME/src/gh-backup/backup.py >> $HOME/src/gh-backup/log 2>&1
