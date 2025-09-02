@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo emerge -a \
+     media-libs/libsdl2 \
+     media-libs/libpng \
+     media-libs/opus \
+     media-libs/opusfile \
+     dev-libs/libzip \
+     dev-cpp/nlohmann_json \
+     dev-libs/tinyxml2

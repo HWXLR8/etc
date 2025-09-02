@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "usage: $0 [rom_path]"
+    exit 1
+fi
+
+git clone https://github.com/HarbourMasters/2ship2harkinian
+cd 2ship2harkinian
+git submodule update --init
+
+cp -v "$1" OTRExporter/
+
+cmake -H. -Bbuild-cmake -GNinja
+cmake --build build-cmake --target ExtractAssets
+cmake --build build-cmake
