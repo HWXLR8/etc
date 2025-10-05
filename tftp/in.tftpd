@@ -1,2 +1,2 @@
-INTFTPD_PATH="/bucket/tftp/"
+INTFTPD_PATH="/bucket/pxe/"
 INTFTPD_OPTS="-R 4096:32767 -s ${INTFTPD_PATH}"
