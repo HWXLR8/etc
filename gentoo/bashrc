@@ -55,7 +55,3 @@ function esp32 {
     unset PYTHONPATH
     . export.sh
 }
-
-# synchronize X/GTK clipboards
-autocutsel &
-autocutsel -s PRIMARY &

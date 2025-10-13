@@ -31,5 +31,4 @@ emerge -a \
        usbutils \
        cpuid2cpuflags \
        nfs-utils \
-       yt-dlp \
-       autocutsel
+       yt-dlp
