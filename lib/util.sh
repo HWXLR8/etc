@@ -152,3 +152,23 @@ zfs-unlock() {
     sudo zfs load-key -a
     sudo zfs mount $1
 }
+
+mkswapfile() {
+   if [ -z "$1" ]; then
+        echo "usage: mkswapfile [SIZE]"
+        echo "ex: mkswapfile 8G"
+        return 1
+    fi
+    local size="$1"
+
+    log "creating swapfile of size $size"
+    sudo fallocate -l "$size" /swapfile
+    log "setting permissions to 600"
+    sudo chmod 600 /swapfile
+    log "creating swap"
+    sudo mkswap /swapfile
+    log "swapon"
+    sudo swapon /swapfile
+    log "adding to fstab"
+    echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab >/dev/null
+}
