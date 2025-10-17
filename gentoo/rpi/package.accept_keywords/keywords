@@ -1,0 +1,9 @@
+sci-electronics/kicad ~*
+sci-electronics/kicad-footprints ~*
+sci-electronics/kicad-packages3d ~*
+sci-electronics/kicad-symbols ~*
+
+dev-libs/nng *
+games-emulation/mupen64plus* **
+games-emulation/m64py **
+dev-python/pysdl2 **

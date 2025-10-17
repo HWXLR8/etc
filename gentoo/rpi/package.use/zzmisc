@@ -1,1 +1,3 @@
-
+# required by media-libs/sdl2-ttf-2.24.0::gentoo
+# required by sdl2-ttf (argument)
+>=media-libs/freetype-2.14.1-r1 harfbuzz

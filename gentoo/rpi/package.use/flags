@@ -10,12 +10,11 @@ media-gfx/imagemagick jpeg png webp
 media-gfx/inkscape imagemagick jpeg
 media-gfx/openscad emacs
 media-libs/libsdl alsa
-media-libs/libsdl2 alsa libsamplerate udev opengl vulkan kms wayland gles2
+media-libs/libsdl2 X alsa libsamplerate udev opengl vulkan kms wayland gles2
 media-libs/sdl-image png gif jpeg tiff
 media-libs/mesa video_cards_v3d video_cards_vc4 vulkan llvm wayland
 media-libs/openal alsa
-media-libs/vulkan-loader
-media-libs/vulkan-loader layers
+media-libs/vulkan-loader layers wayland
 media-sound/alsa-utils -libsamplerate
 media-video/ffmpeg mp3 openssl alsa libdrm opengl opus vorbis vulkan x264 x265 vpx sdl
 media-video/mpv
