@@ -1,0 +1,17 @@
+#!/bin/bash
+
+sudo emerge -a sys-fs/zfs
+
+sudo rc-update add zfs-import boot
+sudo rc-update add zfs-mount boot
+sudo rc-update add zfs-load-key boot
+sudo rc-update add zfs-zed default
+sudo rc-service zfs-import start
+sudo rc-service zfs-mount start
+sudo rc-service zfs-load-key start
+sudo rc-service zfs-zed start
+
+sudo emerge -a mail-mta/msmtp
+
+# copy zed.rc -> /etc/zfs/zed.d/zed.rc
+# copy msmtprc -> /etc/msmtprc

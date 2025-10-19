@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo emerge -a net-fs/nfs-utils
+
+sudo rc-update add nfs default
+sudo rc-service nfs start
+
+# copy exports -> /etc/exports

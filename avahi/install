@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo emerge -a net-dns/avahi net-dns/nss-mdns
+
+sudo rc-update add avahi-daemon default
+sudo rc-service avahi-daemon start
+
+# edit nsswitch
+sudo sed -i -E 's/^hosts:.*/hosts:      files mdns4_minimal [NOTFOUND=return] dns/' /etc/nsswitch.conf
