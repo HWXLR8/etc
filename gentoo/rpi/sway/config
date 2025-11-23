@@ -13,7 +13,7 @@ bindsym $mod+Return exec foot
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec bemenu-run --width-factor 0.5 --fn "Terminus (TTF)" -p "$" -l 10
+bindsym $mod+d exec bemenu-run --width-factor 0.5 --fn "Terminus" -p "$" -l 10
 
 # change focus
 bindsym $mod+Left focus left
