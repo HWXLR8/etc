@@ -172,3 +172,15 @@ mkswapfile() {
     log "adding to fstab"
     echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab >/dev/null
 }
+
+venv() {
+   if [ -z "$1" ]; then
+        echo "usage: venv [name]"
+        return 1
+    fi
+    local name="$1"
+
+    log "creating venv $name"
+    python -m venv --system-site-packages "$name"
+    log "done"
+}
