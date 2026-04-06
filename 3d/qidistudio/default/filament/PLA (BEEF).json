@@ -1,0 +1,21 @@
+{
+    "filament_cost": [
+        "24.96"
+    ],
+    "filament_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "filament_flow_ratio": [
+        "0.97"
+    ],
+    "filament_settings_id": [
+        "PLA (BEEF)"
+    ],
+    "from": "User",
+    "inherits": "Generic PLA @Qidi Q2 0.4 nozzle",
+    "name": "PLA (BEEF)",
+    "pressure_advance": [
+        "0.03"
+    ],
+    "version": "2.5.1.52"
+}

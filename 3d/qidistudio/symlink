@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euo pipefail
+source ../../lib/common.sh
+
+DEST="$HOME/.config/QIDIStudio/user/default"
+
+log "removing old config"
+rm -rfv "$DEST"
+
+log "linking"
+ln -svf "$PWD/default" "$DEST"
