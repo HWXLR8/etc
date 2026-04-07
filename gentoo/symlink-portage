@@ -9,7 +9,7 @@ sudo rm -rfv /etc/portage/package.accept_keywords
 sudo rm -rfv /etc/portage/package.license
 
 log "linking"
-sudo ln -svf $PWD/package.use /etc/portage/
-sudo ln -svf $PWD/package.unmask /etc/portage/
-sudo ln -svf $PWD/package.accept_keywords /etc/portage/
-sudo ln -svf $PWD/package.license /etc/portage/
+sudo ln -svf $PWD/portage/package.use /etc/portage/
+sudo ln -svf $PWD/portage/package.unmask /etc/portage/
+sudo ln -svf $PWD/portage/package.accept_keywords /etc/portage/
+sudo ln -svf $PWD/portage/package.license /etc/portage/
