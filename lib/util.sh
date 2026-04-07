@@ -184,3 +184,86 @@ venv() {
     python -m venv --system-site-packages "$name"
     log "done"
 }
+
+# pack an xbox iso
+xpack() {
+    if [ -z "$1" ] || [ -z "$2" ]; then
+        log "Error: You must provide both the source folder and the output ISO name."
+        log "Usage: xpack <folder_name> <output_name.iso>"
+        return 1
+    fi
+    extract-xiso -c "$1" "$2"
+}
+
+# unpack an xbox iso
+xunpack() {
+    if [ -z "$1" ]; then
+        log "Usage: xunpack <source_iso> [optional_destination_dir]"
+        return 1
+    fi
+
+    # If a second argument is provided, use it as the destination
+    if [ -n "$2" ]; then
+        extract-xiso -x "$1" -d "$2"
+    else
+        extract-xiso -x "$1"
+    fi
+}
+
+xbox-cp() {
+    local zip="$1"
+    local tmp iso game remote_game
+    local XBOX_HOST="${XBOX_HOST:-10.0.0.199}"
+    local XBOX_USER="${XBOX_USER:-xbox}"
+    local XBOX_PASS="${XBOX_PASS:-xbox}"
+
+    [ -n "$zip" ] || { echo "usage: xbox-cp <zip>"; return 2; }
+
+    tmp="$(mktemp -d)" || return 1
+
+    unzip -q -- "$zip" -d "$tmp" || {
+        rm -rf -- "$tmp"
+        return 1
+    }
+
+    iso="$(find "$tmp" -type f -iname '*.iso' -print -quit)"
+    [ -n "$iso" ] || {
+        echo "No ISO found"
+        rm -rf -- "$tmp"
+        return 1
+    }
+
+    game="$(basename "${iso%.*}")"
+    remote_game="${game:0:42}"
+
+    extract-xiso "$iso" -d "$tmp/$game" || {
+        rm -rf -- "$tmp"
+        return 1
+    }
+
+    (
+        cd "$tmp/$game" || exit 1
+
+        lftp -u "$XBOX_USER","$XBOX_PASS" "ftp://$XBOX_HOST" <<EOF
+set ftp:passive-mode true
+set ftp:prefer-epsv false
+set cmd:fail-exit yes
+cd Hdd1/games
+mkdir "$remote_game"
+cd "$remote_game" && mirror -R
+bye
+EOF
+    ) || {
+        rm -rf -- "$tmp"
+        return 1
+    }
+
+    rm -rf -- "$tmp"
+}
+
+# launch esp32 dev environment
+esp32 {
+    cd $HOME/src/esp-idf
+    unset PYTHONPATH
+    . export.sh
+}
