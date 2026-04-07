@@ -106,17 +106,27 @@ gaps outer 45
 smart_gaps on
 
 # resolution
-# output HDMI-A-1 scale 2
-output HDMI-A-1 resolution 1920x1080@120Hz
-# output HDMI-A-1 resolution 3840x2160@60Hz
-
-output * {
-       bg #222222 solid_color
+output DP-2 {
+    resolution 3840x2160@120Hz
+    scale 2
+    adaptive_sync on
+    bg #222222 solid_color
 }
+
+# mouse cursor size
+seat * xcursor_theme Adwaita 24
 
 # custom shortcuts
 bindsym $mod+s exec bash -c 'file="/tmp/$(date +%b%d_%H-%M-%S).png"; grim -g "$(slurp)" "$file" && wl-copy --type image/png < "$file"'
 
-# env variables
-# setenv QT_STYLE_OVERRIDE=Adwaita-Dark
-# setenv GTK_THEME=Adwaita:dark
+# audio
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%- unmute
+bindsym XF86AudioMute        exec amixer -q sset Master toggle
+
+# scroll speed
+input "type:pointer" {
+      scroll_factor 2.0
+}
+
+exec --no-startup-id gammastep -m wayland -O 3000
