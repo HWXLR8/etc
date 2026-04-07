@@ -1,8 +1,0 @@
-#!/bin/bash
-
-emerge -a \
-       transmission \
-       kicad \
-       kicad-footprints \
-       kicad-packages3d \
-       kicad-symbols
