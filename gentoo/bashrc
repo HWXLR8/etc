@@ -41,17 +41,5 @@ alias eu="equery u"
 
 # ENV
 source "$SDL/../lib/env.sh"
-export PATH="$PATH:/usr/games/bin:/usr/sbin:/sbin:~/.local/bin:~/src/bin"
-export LADSPA_PATH=/usr/lib64/ladspa/
-
-# theme
-export QT_STYLE_OVERRIDE=Adwaita-Dark
 
 complete -cf sudo
-
-# ESP32
-function esp32 {
-    cd $HOME/src/esp-idf
-    unset PYTHONPATH
-    . export.sh
-}
