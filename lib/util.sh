@@ -262,7 +262,7 @@ EOF
 }
 
 # launch esp32 dev environment
-esp32 {
+esp32() {
     cd $HOME/src/esp-idf
     unset PYTHONPATH
     . export.sh
