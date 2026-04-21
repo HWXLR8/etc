@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source ../lib/common.sh
+
+log "emerging cups"
+sudo emerge -a net-print/cups
+
+log "adding user to lp & lpadmin groups"
+sudo usermod -aG lp,lpadmin "$(whoami)"
+
+log "updating system services"
+rc-update add cupsd default
+rc-service cupsd start
+
+log "Done. Log out and back in for group changes to take effect."
+log "Then go to http://localhost:631 to add your printer."
