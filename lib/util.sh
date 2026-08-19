@@ -210,36 +210,45 @@ xunpack() {
     fi
 }
 
-xbox-cp() {
+xbox-cp() (
     local zip="$1"
-    local tmp iso game remote_game
+    local tmp="" iso game remote_game zip_name
     local XBOX_HOST="${XBOX_HOST:-10.0.0.199}"
     local XBOX_USER="${XBOX_USER:-xbox}"
     local XBOX_PASS="${XBOX_PASS:-xbox}"
 
-    [ -n "$zip" ] || { echo "usage: xbox-cp <zip>"; return 2; }
+    [ -n "$zip" ] || { log "usage: xbox-cp <zip>"; return 2; }
+
+    trap '[ -z "$tmp" ] || rm -rf -- "$tmp"' EXIT
+    trap 'log "xbox-cp interrupted"; exit 130' INT
+    trap 'log "xbox-cp interrupted"; exit 129' HUP
+    trap 'log "xbox-cp interrupted"; exit 143' TERM
 
     tmp="$(mktemp -d)" || return 1
+    zip_name="$(basename -- "$zip")"
 
+    log "unpacking $zip_name"
     unzip -q -- "$zip" -d "$tmp" || {
-        rm -rf -- "$tmp"
+        log "failed to unpack $zip_name"
         return 1
     }
 
     iso="$(find "$tmp" -type f -iname '*.iso' -print -quit)"
     [ -n "$iso" ] || {
-        echo "No ISO found"
-        rm -rf -- "$tmp"
+        log "no ISO found in $zip_name"
         return 1
     }
 
     game="$(basename "${iso%.*}")"
     remote_game="${game:0:42}"
 
+    log "extracting $(basename -- "$iso")"
     extract-xiso "$iso" -d "$tmp/$game" || {
-        rm -rf -- "$tmp"
+        log "failed to extract $(basename -- "$iso")"
         return 1
     }
+
+    log "uploading to $XBOX_HOST:/Hdd1/games/$remote_game"
 
     (
         cd "$tmp/$game" || exit 1
@@ -254,12 +263,12 @@ cd "$remote_game" && mirror -R
 bye
 EOF
     ) || {
-        rm -rf -- "$tmp"
+        log "upload failed"
         return 1
     }
 
-    rm -rf -- "$tmp"
-}
+    log "upload complete"
+)
 
 # launch esp32 dev environment
 esp32() {
