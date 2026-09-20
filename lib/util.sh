@@ -276,3 +276,61 @@ esp32() {
     unset PYTHONPATH
     . export.sh
 }
+
+addme() {
+    sudo usermod -aG "$1" "$USER"
+}
+
+# wipe the entire git history of a repo without removing .git
+git-wipe() {
+    set -x
+    git checkout --orphan temp
+    git add -A
+    git commit -am "init"
+    git branch -D master
+    git branch -m master
+    set +x
+}
+
+# update all repos in a directory of git repos
+update-repos() {
+    for d in */ ; do
+        cd "$d"
+        git pull --rebase origin master
+        cd ..
+    done
+}
+
+hwxlr8() {
+    git clone git@github.com:hwxlr8/$1 || \
+    git clone https://github.com:hwxlr8/$1
+}
+
+# downlaod the (generally) best quailty version of a youtube videa,
+# this is not perfect
+yt() {
+    yt-dlp \
+        -f "(bestvideo[vcodec^=av01][height>=1080][fps>30]/bestvideo[vcodec=vp9.2][height>=1080] \
+        [fps>30]/bestvideo[vcodec=vp9][height>=1080][fps>30]/bestvideo[vcodec^=av01] \
+        [height>=1080]/bestvideo[vcodec=vp9.2][height>=1080]/bestvideo[vcodec=vp9] \
+        [height>=1080]/bestvideo[height>=1080]/bestvideo[vcodec^=av01][height>=720] \
+        [fps>30]/bestvideo[vcodec=vp9.2][height>=720][fps>30]/bestvideo[vcodec=vp9][height>=720] \
+        [fps>30]/bestvideo[vcodec^=av01][height>=720]/bestvideo[vcodec=vp9.2][height>=720]/ \
+        bestvideo[vcodec=vp9][height>=720]/bestvideo[height>=720]/bestvideo)+ \
+        (bestaudio[acodec=opus]/bestaudio)/best" $1
+}
+
+# search youtube
+yts() {
+    yt-dlp ytsearch10:"$1" --get-title --get-id
+}
+
+# play youtube videos using mpv
+ytmpv() {
+    mpv https://www.youtube.com/watch?v=$1
+}
+
+# play youtube audio stream using mpv
+ytmpva() {
+    mpv --no-video https://www.youtube.com/watch?v=$1
+}

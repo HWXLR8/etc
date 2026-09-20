@@ -3,29 +3,7 @@
 SP=$(readlink -f "${BASH_SOURCE[0]}")
 SDL=$(dirname "$SP")
 
-# shell
-source "$SDL/../lib/alias/shell.sh"
-
-# application shortcuts
-source "$SDL/../lib/alias/app.sh"
-
-# git
-source "$SDL/../lib/alias/git.sh"
-
-# youtube
-source "$SDL/../lib/alias/yt.sh"
-
-# docker
-source "$SDL/../lib/alias/docker.sh"
-
-# alsa
-source "$SDL/../lib/alias/alsa.sh"
-
-# misc
-source "$SDL/../lib/alias/misc.sh"
-
-# utility functions
-source "$SDL/../lib/util.sh"
+source "$SDL/../lib/rc.sh"
 
 alias i="imv-wayland"
 alias esp32='. $HOME/src/etc/dietpi/esp32/esp-idf/export.sh'

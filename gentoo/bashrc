@@ -3,34 +3,7 @@
 SP=$(readlink -f "${BASH_SOURCE[0]}")
 SDL=$(dirname "$SP")
 
-source "$SDL/../lib/common.sh"
-
-# shell
-source "$SDL/../lib/alias/shell.sh"
-
-# application shortcuts
-source "$SDL/../lib/alias/app.sh"
-
-# git
-source "$SDL/../lib/alias/git.sh"
-
-# youtube
-source "$SDL/../lib/alias/yt.sh"
-
-# docker
-source "$SDL/../lib/alias/docker.sh"
-
-# alsa
-source "$SDL/../lib/alias/alsa.sh"
-
-# hosts
-source "$SDL/../lib/alias/host.sh"
-
-# misc
-source "$SDL/../lib/alias/misc.sh"
-
-# utility functions
-source "$SDL/../lib/util.sh"
+source "$SDL/../lib/rc.sh"
 
 # gentoo
 alias upgrade='sudo emerge --sync; eix-update; sudo emerge -a -uDN world'
@@ -39,7 +12,5 @@ alias use="$EDITOR /etc/portage/package.use/flags"
 alias zzmisc="$EDITOR /etc/portage/package.use/zzmisc"
 alias eu="equery u"
 
-# ENV
-source "$SDL/../lib/env.sh"
-
 complete -cf sudo
+
