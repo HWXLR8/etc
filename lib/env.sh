@@ -1,5 +1,4 @@
 export EDITOR='emacs -nw'
-export TERM='xterm'
 export PS1='\[\e[0;35m\][\W]\[\e[0m\]$(__git_ps1) '
 
 # for qt5 moc used by MAME

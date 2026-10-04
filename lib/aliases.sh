@@ -6,7 +6,6 @@ alias chx='chmod +x'
 alias rf='rm -rfv'
 
 # apps
-alias e='emacs -nw'
 alias em='emacs -nw --eval="(mu4e)"'
 alias lb='lsblk'
 alias v='alsamixer'

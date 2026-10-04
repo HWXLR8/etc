@@ -40,6 +40,25 @@ b() {
     nohup "$@" > /dev/null 2>&1 &
 }
 
+# edit a file, optionally on a remote host
+# usage: e [file]
+#        e user@host [file]   -> edit /path over ssh via tramp
+e() {
+    local target
+    if [[ "$1" == *@* ]]; then
+        target="/ssh:$1:"
+        if [[ -z "$2" ]]; then
+            target+="/"
+        else
+            target+="$2"
+        fi
+    else
+        target="$1"
+        [[ -n "$target" ]] || { echo "usage: e [file] | e user@host [file]"; return 1; }
+    fi
+    emacs -nw "$target"
+}
+
 # a generic i/o benchmarking script
 iobench() {
     command -v fio &>/dev/null || { echo "fio not found"; return 1; }
@@ -283,13 +302,12 @@ addme() {
 
 # wipe the entire git history of a repo without removing .git
 git-wipe() {
-    set -x
     git checkout --orphan temp
+    git rm -r --cached .
     git add -A
-    git commit -am "init"
+    git commit -m "init"
     git branch -D master
     git branch -m master
-    set +x
 }
 
 # update all repos in a directory of git repos
