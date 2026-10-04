@@ -9,3 +9,7 @@ git config --global user.email "$EMAIL"
 git config --global push.default simple
 git config --global credential.helper 'cache --timeout=3600'
 git config --global core.whitespace tab-in-indent
+
+echo "Linking global git ignore.."
+mkdir -pv $HOME/.config/git
+ln -svf $PWD/ignore $HOME/.config/git/ignore
