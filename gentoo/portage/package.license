@@ -1,2 +1,3 @@
 sys-kernel/linux-firmware linux-fw-redistributable
-games-fps/gzdoom Activision ChexQuest3 DOOM-COLLECTORS-EDITION freedist WidePix
+games-engines/uzdoom Activision ChexQuest3 DOOM-COLLECTORS-EDITION freedist WidePix
+app-arch/unrar unRAR
