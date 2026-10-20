@@ -1,6 +1,6 @@
 # shell
-alias c='clear'
-alias ..='cd ..'
+alias s='cd'
+alias r='cd ..'
 alias t='ls --color=auto --sort=extension --group-directories-first -lh'
 alias chx='chmod +x'
 alias rf='rm -rfv'
