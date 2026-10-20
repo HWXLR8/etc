@@ -4,6 +4,8 @@ alias r='cd ..'
 alias t='ls --color=auto --sort=extension --group-directories-first -lh'
 alias chx='chmod +x'
 alias rf='rm -rfv'
+alias rc='source ~/.bashrc'
+alias mt='sudo mount'
 
 # apps
 alias em='emacs -nw --eval="(mu4e)"'
