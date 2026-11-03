@@ -14,10 +14,10 @@ alias v='alsamixer'
 alias l='slock'
 alias f='feh -FZ --force-aliasing'
 alias m='mpv'
-alias g='grep -r -i'
 alias p='python'
 
 # git
+alias g='git'
 alias gs='git status'
 alias ga='git add'
 alias gd='git diff'
